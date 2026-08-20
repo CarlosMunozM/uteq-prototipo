@@ -169,6 +169,23 @@ a {
   font-size: 0.75rem;
 }
 
+/* Estado base: oculto, transparente y ligeramente desplazado hacia arriba */
+.search-box {
+  width: 280px;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* Cuando se abre (agregando la clase .show mediante JS) */
+.search-box.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /* ---------------- Navbar (Verde institucional) ---------------- */
 .navbar-uteq {
   background: linear-gradient(90deg, var(--uteq-green-dark), var(--uteq-green)) !important;
@@ -250,6 +267,36 @@ a {
   .dropdown-submenu>.dropdown-menu.show {
     display: block;
   }
+
+  /* Permitir que el menú principal en móvil no flote de forma extraña */
+  .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+
+  /* Estilo para los padres */
+  .dropdown-submenu>a.dropdown-toggle {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    border-left: 4px solid #198754;
+  }
+
+  /* Forzar que los submenús en móvil se muestren hacia abajo y sin desbordarse */
+  .dropdown-submenu .dropdown-menu.show {
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    background-color: #f1f3f5 !important;
+    /* Un gris muy sutil para diferenciar el nivel hijo */
+    padding-left: 15px;
+    margin-top: 0;
+    border-left: 3px solid #198754 !important;
+  }
 }
 
 .dropdown-menu {
@@ -327,6 +374,23 @@ a {
   .dropdown-submenu:hover>.dropdown-menu {
     display: block !important;
   }
+}
+
+/* 1. Personalizar la flecha de los submenús para que sea más elegante */
+.dropdown-submenu>.dropdown-toggle::after {
+  content: "›";
+  /* Usamos un símbolo tipográfico limpio */
+  border: none;
+  font-size: 1.2rem;
+  vertical-align: middle;
+  float: right;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+/* Rotar la flecha sutilmente cuando está abierto en escritorio */
+.dropdown-submenu:hover>.dropdown-toggle::after {
+  transform: translateX(2px);
 }
 
 /* 1. Reseteamos el contenedor para quitar el fondo blanco y borde */

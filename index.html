@@ -69,32 +69,54 @@
                     </a>
                 </div>
                 <!-- Idioma y buscador a la derecha de forma compacta -->
-                <div class="d-flex gap-2 align-items-center ps-2 flex-shrink-0 position-relative">
-                    <!-- Selector de idioma -->
-                    <a
-                        href="#"
-                        class="dropdown-toggle text-white text-decoration-none small px-1"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >ES</a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <a class="dropdown-item" href="#">Español</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">English</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Portugués</a>
-                        </li>
-                    </ul>
-                    <!-- Separador sutil opcional -->
+                <div class="d-flex gap-2 align-items-center ps-2 flex-shrink-0">
+                    <!-- Selector de idioma (envuelto en su propio div para aislar el dropdown) -->
+                    <div class="dropdown">
+                        <a
+                            href="#"
+                            class="dropdown-toggle text-white text-decoration-none small px-1 d-flex align-items-center gap-1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <i class="bi bi-globe"></i>
+                            <span>ES</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 py-1" style="min-width: 120px; z-index: 1050; background-color: #212529;">
+                            <li>
+                                <a class="dropdown-item py-2 small text-light active" href="#">Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2 small text-light" href="#">English</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2 small text-light" href="#">Portugués</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Separador sutil -->
                     <span class="text-white-50">|</span>
-                    <!-- Botón de búsqueda mejorado con texto e icono juntos -->
-                    <a href="#" class="btn-search-bar text-white text-decoration-none d-flex align-items-center gap-1">
-                        <span>Buscar</span>
-                        <i class="bi bi-search"></i>
-                    </a>
+                    <!-- Botón que activa la barra de búsqueda -->
+                    <div class="dropdown position-relative">
+                        <a href="#" class="btn-search-bar text-white text-decoration-none d-flex align-items-center gap-1" id="searchToggleBtn">
+                            <span>Buscar</span>
+                            <i class="bi bi-search"></i>
+                        </a>
+                        <!-- Input de búsqueda -->
+                        <div class="search-box position-absolute end-0 mt-2 p-2 bg-dark rounded shadow" id="searchCollapse">
+                            <form action="#" method="GET" class="input-group input-group-sm">
+                                <input
+                                    type="text"
+                                    name="s"
+                                    class="form-control"
+                                    placeholder="¿Qué buscas en la UTEQ?"
+                                    aria-label="Buscar"
+                                >
+                                <button class="btn btn-success" type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,8 +278,33 @@
                                 <li>
                                     <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu">Información del departamento</a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item" href="https://www.uteq.edu.ec/es/vinculacion/bolsa-de-empleos#">Servicios universitarios</a>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#">Servicios universitarios</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/trabajo-social">Trabajo social</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/servicios-medicos">Servicios médicos</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/psicologia">Psicología</a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item dropdown-toggle" href="#">Cultura</a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/cultura/danza">Escuela de danza</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/cultura/musica">Escuela de música</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/servicios/deporte">Deporte</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="https://www.uteq.edu.ec/es/ubu/ayudas-economicas">Ayudas económicas</a>
@@ -1083,7 +1130,7 @@
                         <h3 class="fw-bold">INVESTIGACIÓN</h3>
                         <p class="mb-4">Generamos conocimiento para el desarrollo sostenible.</p>
                         <div>
-                            <a href="#" class="btn btn-outline-white btn-sm mb-4">CONOCE MÁS</a>
+                            <a href="https://www.uteq.edu.ec/es/investigacion" class="btn btn-outline-white btn-sm mb-4">CONOCE MÁS</a>
                         </div>
                         <div class="d-flex gap-4">
                             <div class="mini-stat">
@@ -1107,10 +1154,10 @@
                     <img src="img/vida-universitaria.png" alt="Vida Universitaria">
                     <div class="overlay"></div>
                     <div class="content h-100 d-flex flex-column justify-content-center">
-                        <h3 class="fw-bold">SERVICIOS UNIVERSITARIOS</h3>
+                        <h3 class="fw-bold">BIENESTAR UNIVERSITARIO</h3>
                         <p class="mb-4">Conoce nuestras servicios y espacios universitarios.</p>
                         <div>
-                            <a href="#" class="btn btn-outline-white btn-sm">CONOCE MÁS</a>
+                            <a href="https://www.uteq.edu.ec/es/ubu" class="btn btn-outline-white btn-sm">CONOCE MÁS</a>
                         </div>
                     </div>
                 </div>
@@ -1434,41 +1481,79 @@
     </script>
     <script>
 document.addEventListener('click', function(e) {
-    // Buscamos si el clic fue en un enlace de submenú (ej: Posgrado)
+    // Buscamos si el clic fue en un elemento que despliega submenú
     let toggle = e.target.closest('.dropdown-submenu > a');
 
     if (toggle) {
+        // Detenemos por completo cualquier otra acción o script de Bootstrap
         e.preventDefault();
         e.stopPropagation();
+        e.stopImmediatePropagation();
 
+        let parentLi = toggle.parentElement;
         let subMenu = toggle.nextElementSibling;
 
         if (subMenu && subMenu.classList.contains('dropdown-menu')) {
-            // Verificamos si ya está abierto actualmente
             let isOpen = subMenu.classList.contains('show');
 
-            // Cerramos cualquier otro submenú abierto en el mismo nivel
-            let parentContainer = toggle.closest('.dropdown-menu');
-            if (parentContainer) {
-                parentContainer.querySelectorAll('.dropdown-menu.show').forEach(function(openMenu) {
-                    openMenu.classList.remove('show');
-                });
-            }
+            // Cerrar hermanos directos en el mismo nivel
+            let siblings = parentLi.parentElement.querySelectorAll(':scope > .dropdown-submenu > .dropdown-menu.show');
+            siblings.forEach(function(sib) {
+                if (sib !== subMenu) {
+                    sib.classList.remove('show');
+                    // Cerrar también los hijos internos si los hubiera
+                    sib.querySelectorAll('.dropdown-menu.show').forEach(child => child.classList.remove('show'));
+                }
+            });
 
-            // Si NO estaba abierto, lo abrimos; si ya estaba abierto, se queda cerrado
+            // Alternar el estado del submenú actual
             if (!isOpen) {
                 subMenu.classList.add('show');
             } else {
                 subMenu.classList.remove('show');
+                // Si se cierra este, limpiar sus hijos internos
+                subMenu.querySelectorAll('.dropdown-menu.show').forEach(child => child.classList.remove('show'));
             }
         }
     } else {
-        // Si hacemos clic fuera del menú, cerramos los submenús abiertos en móvil
+        // Si se hace clic fuera del menú desplegable, cerramos todo
         if (!e.target.closest('.dropdown-menu')) {
             document.querySelectorAll('.dropdown-submenu .dropdown-menu.show').forEach(function(menu) {
                 menu.classList.remove('show');
             });
         }
+    }
+}, true); // <- El 'true' al final es vital: usa la fase de captura para adelantarse a Bootstrap
+
+document.addEventListener('click', function(e) {
+    let searchCollapse = document.getElementById('searchCollapse');
+    let searchToggleBtn = document.getElementById('searchToggleBtn');
+
+    if (!searchCollapse || !searchToggleBtn) return;
+
+    let isClickInsideBtn = searchToggleBtn.contains(e.target);
+    let isClickInsideBox = searchCollapse.contains(e.target);
+    let isOpen = searchCollapse.classList.contains('show');
+
+    // Si damos clic en el botón de búsqueda, alternamos el estado
+    if (isClickInsideBtn) {
+        e.preventDefault();
+        if (isOpen) {
+            searchCollapse.classList.remove('show');
+        } else {
+            searchCollapse.classList.add('show');
+            // Opcional: hacer foco automático en el input al abrir
+            setTimeout(() => {
+                let input = searchCollapse.querySelector('input');
+                if (input) input.focus();
+            }, 50);
+        }
+        return;
+    }
+
+    // Si está abierto y damos clic fuera de todo el buscador, se oculta suavemente
+    if (isOpen && !isClickInsideBox) {
+        searchCollapse.classList.remove('show');
     }
 });
     </script>
