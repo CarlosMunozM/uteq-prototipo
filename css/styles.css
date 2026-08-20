@@ -433,36 +433,15 @@ a {
   border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* ---------------- Hero Mejorado ---------------- */
-.hero {
-  position: relative;
-  min-height: 500px;
-  /* Un poco más de altura para que respire mejor */
-  color: #fff;
-  /* Degradado más profundo a la izquierda para contraste óptimo, fundiéndose hacia la derecha */
-  background: linear-gradient(90deg, rgba(10, 35, 18, 0.92) 0%, rgba(10, 35, 18, 0.65) 50%, rgba(10, 35, 18, 0.3) 100%),
-    url('https://www.uteq.edu.ec/assets/images/banners/img-uteq-banner-0000002.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 4rem 0;
+/* ---------------- Hero Carrusel de Imágenes ---------------- */
+.hero-img {
+  width: 100%;
+  height: 500px; /* Ajusta esta altura según lo necesites */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  object-position: center;
 }
 
-.hero h1 {
-  font-weight: 700;
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-  line-height: 1.15;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  /* Sombra para destacar sobre la imagen */
-}
-
-.hero .lead {
-  max-width: 480px;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.1rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Estilo y posicionamiento elegante para las flechas del carrusel */
+/* Opcional: mejorar la visibilidad de las flechas si la imagen es muy clara */
 #heroCarousel .carousel-control-prev,
 #heroCarousel .carousel-control-next {
   width: 5%;
@@ -475,7 +454,7 @@ a {
   opacity: 1;
 }
 
-/* Indicadores (puntos de navegación) mejor ubicados abajo */
+/* Indicadores */
 #heroCarousel .carousel-indicators {
   margin-bottom: 1.5rem;
 }
@@ -484,8 +463,8 @@ a {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -494,6 +473,17 @@ a {
   border-color: var(--uteq-green-light, #4ade80);
   width: 24px;
   border-radius: 5px;
+}
+
+/* Ajuste específico para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .hero-img, 
+  .carousel-item img {
+    height: auto !important; /* Permite que la imagen tome su proporción natural */
+    max-height: 550px;       /* Evita que sea demasiado alta en celulares muy alargados */
+    object-fit: contain;     /* Muestra el afiche completo sin recortes molestos */
+    background-color: #f8f9fa; /* Fondo limpio por si sobra espacio a los lados */
+  }
 }
 
 /* ---------------- Accesos rápidos ---------------- */
@@ -734,6 +724,7 @@ a {
 .card-title-clamp {
   display: -webkit-box !important;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden !important;
   text-overflow: ellipsis;
