@@ -1,917 +1,1205 @@
 <!DOCTYPE html>
 <html lang="es" class="bg-white">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1c7a35" />
-  <title>UTEQ - Universidad Técnica Estatal de Quevedo</title>
-  <meta name="description" content="Universidad Técnica Estatal de Quevedo (UTEQ). Educación superior de calidad, innovación, investigación y compromiso con la sociedad en Ecuador." />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Custom -->
-  <link href="css/styles.css" rel="stylesheet" />
-
-  <!-- CSS de Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-</head>
-<body>
-
-  <!-- ===================== TOPBAR ===================== -->
-  <div class="topbar bg-black text-white py-1">
-    <div class="container d-flex justify-content-between align-items-center">
-      
-      <!-- Contenedor con scroll horizontal en móviles para que no salten de línea -->
-      <div class="d-flex flex-nowrap overflow-auto gap-3 py-1 topbar-scroll">
-        <a href="#" class="text-white text-decoration-none text-nowrap"><i class="bi bi-diagram-3 me-1"></i>Mapa del sitio</a>
-        <a href="#" class="text-white text-decoration-none text-nowrap">SGA</a>
-        <a href="#" class="text-white text-decoration-none text-nowrap">SAGEST</a>
-        <a href="#" class="text-white text-decoration-none text-nowrap">Postúlate</a>
-        <a href="#" class="text-white text-decoration-none text-nowrap"><i class="bi bi-envelope me-1"></i>Institucional</a>
-      </div>
-
-      <!-- Idioma y buscador a la derecha de forma compacta -->
-      <div class="d-flex gap-2 align-items-center ps-2 flex-shrink-0 position-relative">
-        <!-- Selector de idioma -->
-        <a href="#" class="dropdown-toggle text-white text-decoration-none small px-1" data-bs-toggle="dropdown" aria-expanded="false">ES</a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Español</a></li>
-          <li><a class="dropdown-item" href="#">English</a></li>
-          <li><a class="dropdown-item" href="#">Portugués</a></li>
-        </ul>
-
-        <!-- Separador sutil opcional -->
-        <span class="text-white-50">|</span>
-
-        <!-- Botón de búsqueda mejorado con texto e icono juntos -->
-        <a href="#" class="btn-search-bar text-white text-decoration-none d-flex align-items-center gap-1">
-          <span>Buscar</span>
-          <i class="bi bi-search"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-uteq sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <span class="brand-badge">
-          <img src="img/logo-uteq.webp" alt="UTEQ - Universidad Técnica Estatal de Quevedo" class="brand-img" />
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-        <ul class="navbar-nav align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">La UTEQ</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Historia</a></li>
-              <li><a class="dropdown-item" href="#">Misión y Visión</a></li>
-              <li><a class="dropdown-item" href="#">Autoridades</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Oferta Académica</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Pregrado</a></li>
-              <li><a class="dropdown-item" href="#">Posgrado</a></li>
-              <li><a class="dropdown-item" href="#">Educación Continua</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Investigación</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Proyectos</a></li>
-              <li><a class="dropdown-item" href="#">Revistas</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Vinculación</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Programas</a></li>
-              <li><a class="dropdown-item" href="#">Convenios</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Bienestar</a></li>
-              <li><a class="dropdown-item" href="#">Biblioteca</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Comunicación</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Noticias</a></li>
-              <li><a class="dropdown-item" href="#">Eventos</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ===================== HERO CAROUSEL ===================== -->
-  <header id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <section class="hero">
-          <div class="container">
-            <div class="col-lg-7">
-              <h1 class="text-balance mb-3">Formamos profesionales<br>que <span class="text-uteq" style="color:#4ade80 !important;">transforman</span><br>el Ecuador</h1>
-              <p class="lead mb-4">Educación superior de calidad, innovación, investigación y compromiso con la sociedad.</p>
-              <a href="#" class="btn btn-uteq me-2 mb-2">CONOCE LA UTEQ</a>
-              <a href="#" class="btn btn-outline-white mb-2">OFERTA ACADÉMICA</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#1c7a35">
+        <title>UTEQ - Universidad Técnica Estatal de Quevedo</title>
+        <meta name="description" content="Universidad Técnica Estatal de Quevedo (UTEQ). Educación superior de calidad, innovación, investigación y compromiso con la sociedad en Ecuador.">
+        <!-- Bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Custom -->
+        <link href="css/styles.css" rel="stylesheet">
+        <!-- CSS de Swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    </head>
+    <body>
+        <!-- ===================== TOPBAR ===================== -->
+        <div class="topbar bg-black text-white py-1">
+            <div class="container d-flex justify-content-between align-items-center">
+                <!-- Contenedor con scroll horizontal en móviles para que no salten de línea -->
+                <div class="d-flex flex-nowrap overflow-auto gap-3 py-1 topbar-scroll">
+                    <a href="#" class="text-white text-decoration-none text-nowrap">
+                        <i class="bi bi-diagram-3 me-1"></i>Mapa del sitio
+                    </a>
+                    <a href="#" class="text-white text-decoration-none text-nowrap">SGA</a>
+                    <a href="#" class="text-white text-decoration-none text-nowrap">SAGEST</a>
+                    <a href="#" class="text-white text-decoration-none text-nowrap">Postúlate</a>
+                    <a href="#" class="text-white text-decoration-none text-nowrap">
+                        <i class="bi bi-envelope me-1"></i>Institucional
+                    </a>
+                </div>
+                <!-- Idioma y buscador a la derecha de forma compacta -->
+                <div class="d-flex gap-2 align-items-center ps-2 flex-shrink-0 position-relative">
+                    <!-- Selector de idioma -->
+                    <a
+                        href="#"
+                        class="dropdown-toggle text-white text-decoration-none small px-1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >ES</a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#">Español</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">English</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Portugués</a>
+                        </li>
+                    </ul>
+                    <!-- Separador sutil opcional -->
+                    <span class="text-white-50">|</span>
+                    <!-- Botón de búsqueda mejorado con texto e icono juntos -->
+                    <a href="#" class="btn-search-bar text-white text-decoration-none d-flex align-items-center gap-1">
+                        <span>Buscar</span>
+                        <i class="bi bi-search"></i>
+                    </a>
+                </div>
             </div>
-          </div>
+        </div>
+        <!-- ===================== NAVBAR ===================== -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-uteq sticky-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <span class="brand-badge">
+                        <img src="img/logo-uteq.webp" alt="UTEQ - Universidad Técnica Estatal de Quevedo" class="brand-img">
+                    </span>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">La UTEQ</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Historia</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Misión y Visión</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Autoridades</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Oferta Académica</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Pregrado</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Posgrado</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Educación Continua</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Investigación</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Proyectos</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Revistas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Vinculación</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Programas</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Convenios</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Bienestar</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Biblioteca</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Comunicación</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#">Noticias</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Eventos</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- ===================== HERO CAROUSEL ===================== -->
+        <header id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <section class="hero">
+                        <div class="container">
+                            <div class="col-lg-7">
+                                <h1 class="text-balance mb-3">Formamos profesionales
+                                    <br>que
+                                    <span class="text-uteq" style="color:#4ade80 !important;">transforman</span>
+                                    <br>el Ecuador
+                                </h1>
+                                <p class="lead mb-4">Educación superior de calidad, innovación, investigación y compromiso con la sociedad.</p>
+                                <a href="#" class="btn btn-uteq me-2 mb-2">CONOCE LA UTEQ</a>
+                                <a href="#" class="btn btn-outline-white mb-2">OFERTA ACADÉMICA</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="carousel-item">
+                    <section class="hero">
+                        <div class="container">
+                            <div class="col-lg-7">
+                                <h1 class="text-balance mb-3">Investigación con
+                                    <br>
+                                    <span style="color:#4ade80;">impacto</span> social
+                                </h1>
+                                <p class="lead mb-4">Generamos conocimiento que impulsa el desarrollo sostenible de nuestra región.</p>
+                                <a href="#" class="btn btn-uteq me-2 mb-2">VER PROYECTOS</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="prev"
+            >
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide="next"
+            >
+                <span class="carousel-control-next-icon"></span>
+            </button>
+            <div class="carousel-indicators">
+                <button
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                ></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            </div>
+        </header>
+        <!-- Contenedor con fondo gris que abarca la barra flotante y el video -->
+        <div class="bg-light pb-5">
+            <!-- ===================== ACCESOS RÁPIDOS ===================== -->
+            <div class="container">
+                <div class="quick-access p-3 p-md-4">
+                    <div class="row g-0 text-center align-items-center">
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-mortarboard-fill qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Admisiones</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-journal-bookmark-fill qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Carreras</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-newspaper qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Noticias</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-calendar-event qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Agenda</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-search qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Investigación</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-easel2-fill qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Educación Continua</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item quick-divider py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-book-half qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Revistas</span>
+                            </a>
+                        </div>
+                        <div class="col-4 col-md quick-item py-2">
+                            <a href="#" class="quick-item d-block">
+                                <i class="bi bi-badge-3d-fill qi-icon fs-2"></i>
+                                <span class="d-block mt-2">Tour Virtual</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===================== VIDEO INSTITUCIONAL ===================== -->
+            <section class="pt-4 pb-2 bg-light">
+                <div class="container py-2">
+                    <div class="row align-items-center justify-content-center g-4">
+                        <!-- Texto a la izquierda -->
+                        <div class="col-lg-4">
+                            <span class="badge bg-success-subtle text-success fw-semibold px-3 py-2 rounded-pill mb-2">Universidad Técnica Estatal de Quevedo</span>
+                            <h2 class="fw-bold section-title mb-3">Conoce nuestra
+                                <span class="text-uteq">esencia y compromiso</span>
+                            </h2>
+                            <p class="text-muted mb-0">Formamos profesionales líderes con una sólida base académica, tecnológica y humana, impulsando el desarrollo sostenible de la región y del país.</p>
+                        </div>
+                        <!-- Video optimizado -->
+                        <div class="col-lg-7">
+                            <div class="shadow-sm rounded-4 overflow-hidden bg-black">
+                                <video
+                                    autoplay
+                                    muted
+                                    loop
+                                    playsinline
+                                    poster="../img/campus-hero.png"
+                                    preload="metadata"
+                                    class="w-100 d-block"
+                                    style="height: auto; max-height: 450px; object-fit: contain;"
+                                >
+                                    <source src="https://uteq.edu.ec/assets/videos/video-institucional-uteq.mp4" type="video/mp4">
+                                    Tu navegador no soporta la reproducción de video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- ===================== UTEQ EN CIFRAS ===================== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center section-title mb-5">UTEQ
+                    <span class="text-uteq">EN CIFRAS</span>
+                </h2>
+                <div class="row text-center g-4">
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-people-fill stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">13.608</div>
+                        <div class="stat-label">Estudiantes</div>
+                    </div>
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-journal-text stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">39</div>
+                        <div class="stat-label">Carreras</div>
+                    </div>
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-person-workspace stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">583</div>
+                        <div class="stat-label">Docentes</div>
+                    </div>
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-file-earmark-text stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">3.516</div>
+                        <div class="stat-label">Artículos publicados</div>
+                    </div>
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-lightbulb stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">77</div>
+                        <div class="stat-label">Proyectos de investigación</div>
+                    </div>
+                    <div class="col-6 col-md-2 stat-cell">
+                        <i class="bi bi-book stat-icon fs-1"></i>
+                        <div class="stat-number mt-2">372</div>
+                        <div class="stat-label">Libros publicados</div>
+                    </div>
+                </div>
+            </div>
         </section>
-      </div>
-      <div class="carousel-item">
-        <section class="hero">
-          <div class="container">
-            <div class="col-lg-7">
-              <h1 class="text-balance mb-3">Investigación con<br><span style="color:#4ade80;">impacto</span> social</h1>
-              <p class="lead mb-4">Generamos conocimiento que impulsa el desarrollo sostenible de nuestra región.</p>
-              <a href="#" class="btn btn-uteq me-2 mb-2">VER PROYECTOS</a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-    </div>
-  </header>
-
-  <!-- Contenedor con fondo gris que abarca la barra flotante y el video -->
-  <div class="bg-light pb-5">
-    
-    <!-- ===================== ACCESOS RÁPIDOS ===================== -->
-    <div class="container">
-      <div class="quick-access p-3 p-md-4">
-        <div class="row g-0 text-center align-items-center">
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-mortarboard-fill qi-icon fs-2"></i>
-              <span class="d-block mt-2">Admisiones</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-journal-bookmark-fill qi-icon fs-2"></i>
-              <span class="d-block mt-2">Carreras</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-newspaper qi-icon fs-2"></i>
-              <span class="d-block mt-2">Noticias</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-calendar-event qi-icon fs-2"></i>
-              <span class="d-block mt-2">Agenda</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-search qi-icon fs-2"></i>
-              <span class="d-block mt-2">Investigación</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-easel2-fill qi-icon fs-2"></i>
-              <span class="d-block mt-2">Educación Continua</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item quick-divider py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-book-half qi-icon fs-2"></i>
-              <span class="d-block mt-2">Revistas</span>
-            </a>
-          </div>
-          <div class="col-4 col-md quick-item py-2">
-            <a href="#" class="quick-item d-block">
-              <i class="bi bi-badge-3d-fill qi-icon fs-2"></i>
-              <span class="d-block mt-2">Tour Virtual</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================== VIDEO INSTITUCIONAL ===================== -->
-    <section class="pt-4 pb-2 bg-light">
-      <div class="container py-2">
-        <div class="row align-items-center justify-content-center g-4">
-          <!-- Texto a la izquierda -->
-          <div class="col-lg-4">
-            <span class="badge bg-success-subtle text-success fw-semibold px-3 py-2 rounded-pill mb-2">Universidad Técnica Estatal de Quevedo</span>
-            <h2 class="fw-bold section-title mb-3">Conoce nuestra <span class="text-uteq">esencia y compromiso</span></h2>
-            <p class="text-muted mb-0">Formamos profesionales líderes con una sólida base académica, tecnológica y humana, impulsando el desarrollo sostenible de la región y del país.</p>
-          </div>
-          <!-- Video optimizado -->
-          <div class="col-lg-7">
-            <div class="shadow-sm rounded-4 overflow-hidden bg-black">
-              <video autoplay muted loop playsinline poster="../img/campus-hero.png" preload="metadata" class="w-100 d-block" 
-                     style="height: auto; max-height: 450px; object-fit: contain;">
-                <source src="https://uteq.edu.ec/assets/videos/video-institucional-uteq.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!-- ===================== UTEQ EN CIFRAS ===================== -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center section-title mb-5">UTEQ <span class="text-uteq">EN CIFRAS</span></h2>
-      <div class="row text-center g-4">
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-people-fill stat-icon fs-1"></i>
-          <div class="stat-number mt-2">13.608</div>
-          <div class="stat-label">Estudiantes</div>
-        </div>
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-journal-text stat-icon fs-1"></i>
-          <div class="stat-number mt-2">39</div>
-          <div class="stat-label">Carreras</div>
-        </div>
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-person-workspace stat-icon fs-1"></i>
-          <div class="stat-number mt-2">583</div>
-          <div class="stat-label">Docentes</div>
-        </div>
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-file-earmark-text stat-icon fs-1"></i>
-          <div class="stat-number mt-2">3.516</div>
-          <div class="stat-label">Artículos publicados</div>
-        </div>
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-lightbulb stat-icon fs-1"></i>
-          <div class="stat-number mt-2">77</div>
-          <div class="stat-label">Proyectos de investigación</div>
-        </div>
-        <div class="col-6 col-md-2 stat-cell">
-          <i class="bi bi-book stat-icon fs-1"></i>
-          <div class="stat-number mt-2">372</div>
-          <div class="stat-label">Libros publicados</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ESTUDIA CON NOSOTROS ===================== -->
-  <section class="py-5 bg-soft">
-    <!-- El container lleva position-relative y un padding horizontal para dar carril a las flechas -->
-    <div class="container position-relative px-4 px-md-5">
-      
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="section-title mb-0">ESTUDIA <span class="text-uteq">CON NOSOTROS</span></h3>
-        <a href="https://www.uteq.edu.ec/es/grado/carreras" target="_blank" rel="noopener noreferrer" class="link-more">Ver todas <i class="bi bi-arrow-right"></i></a>
-      </div>
-
-      <!-- Contenedor de Swiper limpio (sin flechas adentro) -->
-      <div class="swiper careersSwiper">
-        <div class="swiper-wrapper pb-2">
-        
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/acuicultura" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_acuicultura_uteq.webp" alt="Acuicultura" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Pecuarias
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Acuicultura</h6>
-                  </div>
+        <!-- ===================== ESTUDIA CON NOSOTROS ===================== -->
+        <section class="py-5 bg-soft">
+            <!-- El container lleva position-relative y un padding horizontal para dar carril a las flechas -->
+            <div class="container position-relative px-4 px-md-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="section-title mb-0">ESTUDIA
+                        <span class="text-uteq">CON NOSOTROS</span>
+                    </h3>
+                    <a
+                        href="https://www.uteq.edu.ec/es/grado/carreras"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-more"
+                    >Ver todas
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/administracion-de-empresas" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_administracion_de_empresas_uteq.webp" alt="Administración de Empresas" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Empresariales
+                <!-- Contenedor de Swiper limpio (sin flechas adentro) -->
+                <div class="swiper careersSwiper">
+                    <div class="swiper-wrapper pb-2">
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/acuicultura" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_acuicultura_uteq.webp" alt="Acuicultura">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Pecuarias
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Acuicultura</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/administracion-de-empresas" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_administracion_de_empresas_uteq.webp" alt="Administración de Empresas">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Empresariales
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Administración de Empresas</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/administracion-publica" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_administracion_publica_uteq.webp" alt="Administración Pública">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Sociales, Económicas y Financieras
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Administración Pública</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/agroecologia" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agroecologia_uteq.webp" alt="Agroecología">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Agrarias y Forestales
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Agroecología</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/agroindustria" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agroindustria_uteq.webp" alt="Agroindustria">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias de la Industria y Producción
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Agroindustria</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/agronomia" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agronomia_uteq.webp" alt="Agronomía">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Agrarias y Forestales
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Agronomía</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/agropecuaria" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agropecuaria_uteq.webp" alt="Agropecuaria">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Pecuarias
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Agropecuaria</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/alimentos" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_alimentos_uteq.webp" alt="Alimentos">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias de la Industria y Producción
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Alimentos</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/arquitectura" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_arquitectura_uteq.webp" alt="Arquitectura">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias de la Ingeniería
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Arquitectura</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="https://www.uteq.edu.ec/es/grado/carrera/biologia" class="text-decoration-none h-100 d-block">
+                                <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
+                                    <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_biologia_uteq.webp" alt="Biología">
+                                    <div class="career-overlay"></div>
+                                    <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
+                                        <div>
+                                            <div class="career-meta text-white-50 small mb-1">
+                                                <i class="bi bi-building"></i>
+                                                Facultad de Ciencias Pecuarias
+                                            </div>
+                                            <h6 class="text-white fw-bold mb-0">Biología</h6>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
                     </div>
-                    <h6 class="text-white fw-bold mb-0">Administración de Empresas</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/administracion-publica" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_administracion_publica_uteq.webp" alt="Administración Pública" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Sociales, Económicas y Financieras
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Administración Pública</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/agroecologia" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agroecologia_uteq.webp" alt="Agroecología" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Agrarias y Forestales
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Agroecología</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/agroindustria" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agroindustria_uteq.webp" alt="Agroindustria" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias de la Industria y Producción
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Agroindustria</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/agronomia" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agronomia_uteq.webp" alt="Agronomía" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Agrarias y Forestales
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Agronomía</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/agropecuaria" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_agropecuaria_uteq.webp" alt="Agropecuaria" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Pecuarias
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Agropecuaria</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/alimentos" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_alimentos_uteq.webp" alt="Alimentos" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias de la Industria y Producción
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Alimentos</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/arquitectura" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_arquitectura_uteq.webp" alt="Arquitectura" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias de la Ingeniería
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Arquitectura</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-          <div class="swiper-slide h-auto">
-            <a href="https://www.uteq.edu.ec/es/grado/carrera/biologia" class="text-decoration-none h-100 d-block">
-              <article class="career-card-modern shadow-sm rounded-4 overflow-hidden position-relative">
-                <img src="https://www.uteq.edu.ec/assets/images/careers/degrees/portrait/afiche_biologia_uteq.webp" alt="Biología" />
-                <div class="career-overlay"></div>
-                <div class="career-content p-4 d-flex flex-column justify-content-end h-100">
-                  <div>
-                    <div class="career-meta text-white-50 small mb-1">
-                      <i class="bi bi-building"></i> Facultad de Ciencias Pecuarias
-                    </div>
-                    <h6 class="text-white fw-bold mb-0">Biología</h6>
-                  </div>
-                </div>
-              </article>
-            </a>
-          </div>
-
-        </div>
-        
-        <!-- Paginación de Puntos Inferiores -->
-        <!--
+                    <!-- Paginación de Puntos Inferiores -->
+                    <!--
         <div class="swiper-pagination career-pagination"></div>
         -->
-      </div>
-
-      <!-- FLECHAS FUERA DEL SWIPER PERO DENTRO DEL CONTAINER -->
-      <div class="swiper-button-prev career-prev"></div>
-      <div class="swiper-button-next career-next"></div>
-
+                </div>
+                <!-- FLECHAS FUERA DEL SWIPER PERO DENTRO DEL CONTAINER -->
+                <div class="swiper-button-prev career-prev"></div>
+                <div class="swiper-button-next career-next"></div>
+            </div>
+        </section>
+        <!-- ===================== NOTICIAS (CARRUSEL) ===================== -->
+        <section class="py-5 bg-soft careers-section">
+            <!-- El container lleva position-relative y un padding horizontal para dar carril a las flechas -->
+            <div class="container position-relative px-4 px-md-5">
+                <div class="d-flex justify-content-between align-items-center mb-4 px-3">
+                    <h3 class="section-title mb-0">NOTICIAS
+                        <span class="text-uteq">DESTACADAS</span>
+                    </h3>
+                    <a
+                        href="https://www.uteq.edu.ec/es/comunicacion"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-more"
+                    >Ver todas
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <!-- Contenedor de Swiper para Noticias -->
+                <div class="swiper newsSwiper">
+                    <div class="swiper-wrapper pb-2">
+                        <!-- Noticia 1 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/movilidades-academicas-colombia-chile"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-movilidades-academicas-colombia-chile.jpg" alt="Movilidades académicas" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Estudiantes universitarios expanden su formación profesional con movilidades académicas a Colombia y Chile</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 19, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Cooperación Internacional, Institucional, Movilidad estudiantil
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 2 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/uteq-alianzas-estrategicas-instituciones-espana"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-uteq-alianzas-estrategicas-instituciones-espana.jpg" alt="Alianzas estratégicas" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">La UTEQ consolida alianzas estratégicas con destacadas instituciones de España</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 17, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Institucional, Alianzas Estratégicas
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 3 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-psicopedagogia-movilidad-academica-colombia"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-psicopedagogia-movilidad-academica-colombia.jpg" alt="Psicopedagogía" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Estudiantes de Psicopedagogía socializaron experiencia de movilidad académica en Colombia</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 15, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Academia, Movilidad Estudiantil, Psicopedagogía
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 4 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/practicas-preprofesionales-chile-formacion-estudiantes-uteq"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-practicas-preprofesionales-chile-formacion-estudiantes-uteq.jpg" alt="Prácticas preprofesionales" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Prácticas preprofesionales en Chile fortalecen la formación de estudiantes de la UTEQ</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 13, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Prácticas Preprofesionales, Movilidad Estudiantil
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 5 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-biologia-movilidad-academica-colombia"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-biologia-movilidad-academica-colombia.jpg" alt="Biología" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Estudiantes de Biología compartieron los frutos de su movilidad académica en Colombia</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 8, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Facultad de Ciencias, Movilidad Estudiantil, Biología
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 6 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-hondurenos-investigacion-nutricion-indigena-uteq"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-hondurenos-investigacion-nutricion-indigena-uteq.jpg" alt="Investigación internacional" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">UTEQ fortalece su internacionalización: estudiantes hondureños desarrollarán trabajos de titulación...</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 06, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Cooperación Internacional, Investigación
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 7 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/graduada-enfermeria-gestion-laboral-austria"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-graduada-enfermeria-gestion-laboral-austria.jpg" alt="Enfermería" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Graduada de Enfermería iniciará gestión laboral en Austria</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 06, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Graduados, Internacional, Enfermería
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 8 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/nuevas-rutas-ensenanza-ingles-cooperacion-internacional"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-nuevas-rutas-ensenanza-ingles-cooperacion-internacional.jpg" alt="Cooperación internacional" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Nuevas rutas para enseñar y aprender inglés desde la cooperación internacional</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 06, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Cooperación Internacional, Idiomas
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                        <!-- Noticia 9 -->
+                        <div class="swiper-slide h-auto">
+                            <a
+                                href="https://www.uteq.edu.ec/es/comunicacion/noticia/estancia-academica-colombia-liderazgo-profesional-vision-global"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-decoration-none text-dark h-100 d-block"
+                            >
+                                <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
+                                    <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estancia-academica-colombia-liderazgo-profesional-vision-global.jpg" alt="Liderazgo profesional" class="w-100">
+                                    <div class="p-4">
+                                        <h6 class="fw-bold card-title-clamp mb-2">Estancia académica en Colombia potencia el liderazgo profesional y la visión global</h6>
+                                        <div class="news-date mb-1 text-muted small">
+                                            <i class="bi bi-clock-history"></i>
+                                            Ago 06, 2026
+                                        </div>
+                                        <div class="news-categories small text-secondary">
+                                            Movilidad Estudiantil, Liderazgo
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- FLECHAS FUERA DEL SWIPER PERO DENTRO DEL CONTAINER (Igual que en carreras) -->
+                <div class="swiper-button-prev news-prev"></div>
+                <div class="swiper-button-next news-next"></div>
+            </div>
+        </section>
+        <!-- ===================== AGENDA ===================== -->
+        <section class="py-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="section-title mb-0">AGENDA</h3>
+                    <a href="#" class="link-more">Ver calendario
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <div class="border rounded p-3 calendar">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <strong class="text-uteq small">Agosto 2026</strong>
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>LUN</th>
+                                        <th>MAR</th>
+                                        <th>MIÉ</th>
+                                        <th>JUE</th>
+                                        <th>VIE</th>
+                                        <th>SÁB</th>
+                                        <th>DOM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>
+                                            <span class="today">18</span>
+                                        </td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>31</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex gap-3 mb-3 align-items-center">
+                            <div class="agenda-day">
+                                <span class="d">22</span>
+                                <span class="m">Ago</span>
+                            </div>
+                            <div>
+                                <strong class="d-block">Seminario de Investigación</strong>
+                                <small class="text-muted">Auditorio UTEQ · 09:00</small>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 mb-3 align-items-center">
+                            <div class="agenda-day">
+                                <span class="d">24</span>
+                                <span class="m">Ago</span>
+                            </div>
+                            <div>
+                                <strong class="d-block">Feria de Emprendimiento</strong>
+                                <small class="text-muted">Campus La María · 10:00</small>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <div class="agenda-day">
+                                <span class="d">28</span>
+                                <span class="m">Ago</span>
+                            </div>
+                            <div>
+                                <strong class="d-block">Jornada de Vinculación</strong>
+                                <small class="text-muted">Sala de Conferencias · 14:00</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
-
-  <!-- ===================== NOTICIAS (CARRUSEL) ===================== -->
-<section class="py-5 bg-soft careers-section">
-  <!-- El container lleva position-relative y un padding horizontal para dar carril a las flechas -->
-  <div class="container position-relative px-4 px-md-5">
-    
-    <div class="d-flex justify-content-between align-items-center mb-4 px-3">
-      <h3 class="section-title mb-0">NOTICIAS <span class="text-uteq">DESTACADAS</span></h3>
-      <a href="https://www.uteq.edu.ec/es/comunicacion" target="_blank" rel="noopener noreferrer" class="link-more">Ver todas <i class="bi bi-arrow-right"></i></a>
-    </div>
-
-    <!-- Contenedor de Swiper para Noticias -->
-    <div class="swiper newsSwiper">
-      <div class="swiper-wrapper pb-2">
-      
-        <!-- Noticia 1 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/movilidades-academicas-colombia-chile" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-movilidades-academicas-colombia-chile.jpg" alt="Movilidades académicas" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Estudiantes universitarios expanden su formación profesional con movilidades académicas a Colombia y Chile</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 19, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Cooperación Internacional, Institucional, Movilidad estudiantil
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 2 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/uteq-alianzas-estrategicas-instituciones-espana" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-uteq-alianzas-estrategicas-instituciones-espana.jpg" alt="Alianzas estratégicas" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">La UTEQ consolida alianzas estratégicas con destacadas instituciones de España</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 17, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Institucional, Alianzas Estratégicas
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 3 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-psicopedagogia-movilidad-academica-colombia" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-psicopedagogia-movilidad-academica-colombia.jpg" alt="Psicopedagogía" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Estudiantes de Psicopedagogía socializaron experiencia de movilidad académica en Colombia</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 15, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Academia, Movilidad Estudiantil, Psicopedagogía
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 4 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/practicas-preprofesionales-chile-formacion-estudiantes-uteq" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-practicas-preprofesionales-chile-formacion-estudiantes-uteq.jpg" alt="Prácticas preprofesionales" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Prácticas preprofesionales en Chile fortalecen la formación de estudiantes de la UTEQ</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 13, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Prácticas Preprofesionales, Movilidad Estudiantil
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 5 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-biologia-movilidad-academica-colombia" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-biologia-movilidad-academica-colombia.jpg" alt="Biología" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Estudiantes de Biología compartieron los frutos de su movilidad académica en Colombia</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 8, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Facultad de Ciencias, Movilidad Estudiantil, Biología
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 6 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/estudiantes-hondurenos-investigacion-nutricion-indigena-uteq" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estudiantes-hondurenos-investigacion-nutricion-indigena-uteq.jpg" alt="Investigación internacional" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">UTEQ fortalece su internacionalización: estudiantes hondureños desarrollarán trabajos de titulación...</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 06, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Cooperación Internacional, Investigación
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 7 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/graduada-enfermeria-gestion-laboral-austria" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-graduada-enfermeria-gestion-laboral-austria.jpg" alt="Enfermería" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Graduada de Enfermería iniciará gestión laboral en Austria</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 06, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Graduados, Internacional, Enfermería
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 8 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/nuevas-rutas-ensenanza-ingles-cooperacion-internacional" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-nuevas-rutas-ensenanza-ingles-cooperacion-internacional.jpg" alt="Cooperación internacional" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Nuevas rutas para enseñar y aprender inglés desde la cooperación internacional</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 06, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Cooperación Internacional, Idiomas
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-        <!-- Noticia 9 -->
-        <div class="swiper-slide h-auto">
-          <a href="https://www.uteq.edu.ec/es/comunicacion/noticia/estancia-academica-colombia-liderazgo-profesional-vision-global" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark h-100 d-block">
-            <article class="news-card h-100 shadow-sm rounded-4 overflow-hidden position-relative bg-white">
-              <img src="https://www.uteq.edu.ec/assets/images/news/pagina/portada-estancia-academica-colombia-liderazgo-profesional-vision-global.jpg" alt="Liderazgo profesional" class="w-100" />
-              <div class="p-4">
-                <h6 class="fw-bold card-title-clamp mb-2">Estancia académica en Colombia potencia el liderazgo profesional y la visión global</h6>
-                <div class="news-date mb-1 text-muted small">
-                  <i class="bi bi-clock-history"></i> Ago 06, 2026
-                </div>
-                <div class="news-categories small text-secondary">
-                  Movilidad Estudiantil, Liderazgo
-                </div>
-              </div>
-            </article>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- FLECHAS FUERA DEL SWIPER PERO DENTRO DEL CONTAINER (Igual que en carreras) -->
-    <div class="swiper-button-prev news-prev"></div>
-    <div class="swiper-button-next news-next"></div>
-
-  </div>
 </section>
-
-  <!-- ===================== AGENDA ===================== -->
-  <section class="py-5">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="section-title mb-0">AGENDA</h3>
-        <a href="#" class="link-more">Ver calendario <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="row g-4">
-            <div class="col-sm-6">
-              <div class="border rounded p-3 calendar">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <button class="btn btn-sm btn-light"><i class="bi bi-chevron-left"></i></button>
-                  <strong class="text-uteq small">Agosto 2026</strong>
-                  <button class="btn btn-sm btn-light"><i class="bi bi-chevron-right"></i></button>
-                </div>
-                <table>
-                  <thead><tr><th>LUN</th><th>MAR</th><th>MIÉ</th><th>JUE</th><th>VIE</th><th>SÁB</th><th>DOM</th></tr></thead>
-                  <tbody>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-                    <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-                    <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-                    <tr><td>17</td><td><span class="today">18</span></td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-                    <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-                    <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex gap-3 mb-3 align-items-center">
-                <div class="agenda-day"><span class="d">22</span><span class="m">Ago</span></div>
-                <div>
-                  <strong class="d-block">Seminario de Investigación</strong>
-                  <small class="text-muted">Auditorio UTEQ · 09:00</small>
-                </div>
-              </div>
-              <div class="d-flex gap-3 mb-3 align-items-center">
-                <div class="agenda-day"><span class="d">24</span><span class="m">Ago</span></div>
-                <div>
-                  <strong class="d-block">Feria de Emprendimiento</strong>
-                  <small class="text-muted">Campus La María · 10:00</small>
-                </div>
-              </div>
-              <div class="d-flex gap-3 align-items-center">
-                <div class="agenda-day"><span class="d">28</span><span class="m">Ago</span></div>
-                <div>
-                  <strong class="d-block">Jornada de Vinculación</strong>
-                  <small class="text-muted">Sala de Conferencias · 14:00</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== INVESTIGACIÓN / SERVICIOS UNIVERSITARIOS ===================== -->
-  <section class="py-4 bg-light">
+<!-- ===================== INVESTIGACIÓN / SERVICIOS UNIVERSITARIOS ===================== -->
+<section class="py-4 bg-light">
     <div class="container py-2">
-      
-      <!-- TÍTULO GENERAL DE LA SECCIÓN -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="section-title mb-0">CIENCIA Y <span class="text-uteq">COMUNIDAD</span></h3>
-      </div>
-
-      <!-- PANELES -->
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="split-panel h-100">
-            <img src="img/investigacion.png" alt="Investigación" />
-            <div class="overlay"></div>
-            <div class="content h-100 d-flex flex-column justify-content-center">
-              <h3 class="fw-bold">INVESTIGACIÓN</h3>
-              <p class="mb-4">Generamos conocimiento para el desarrollo sostenible.</p>
-              <div>
-                <a href="#" class="btn btn-outline-white btn-sm mb-4">CONOCE MÁS</a>
-              </div>
-              <div class="d-flex gap-4">
-                <div class="mini-stat"><div class="n">3.516</div><div class="l">Artículos</div></div>
-                <div class="mini-stat"><div class="n">77</div><div class="l">Proyectos</div></div>
-                <div class="mini-stat"><div class="n">372</div><div class="l">Libros</div></div>
-              </div>
-            </div>
-          </div>
+        <!-- TÍTULO GENERAL DE LA SECCIÓN -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="section-title mb-0">CIENCIA Y
+                <span class="text-uteq">COMUNIDAD</span>
+            </h3>
         </div>
-        <div class="col-lg-6">
-          <div class="split-panel h-100">
-            <img src="img/vida-universitaria.png" alt="Vida Universitaria" />
-            <div class="overlay"></div>
-            <div class="content h-100 d-flex flex-column justify-content-center">
-              <h3 class="fw-bold">SERVICIOS UNIVERSITARIOS</h3>
-              <p class="mb-4">Conoce nuestras servicios y espacios universitarios.</p>
-              <div>
-                <a href="#" class="btn btn-outline-white btn-sm">CONOCE MÁS</a>
-              </div>
+        <!-- PANELES -->
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="split-panel h-100">
+                    <img src="img/investigacion.png" alt="Investigación">
+                    <div class="overlay"></div>
+                    <div class="content h-100 d-flex flex-column justify-content-center">
+                        <h3 class="fw-bold">INVESTIGACIÓN</h3>
+                        <p class="mb-4">Generamos conocimiento para el desarrollo sostenible.</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-white btn-sm mb-4">CONOCE MÁS</a>
+                        </div>
+                        <div class="d-flex gap-4">
+                            <div class="mini-stat">
+                                <div class="n">3.516</div>
+                                <div class="l">Artículos</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="n">77</div>
+                                <div class="l">Proyectos</div>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="n">372</div>
+                                <div class="l">Libros</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-lg-6">
+                <div class="split-panel h-100">
+                    <img src="img/vida-universitaria.png" alt="Vida Universitaria">
+                    <div class="overlay"></div>
+                    <div class="content h-100 d-flex flex-column justify-content-center">
+                        <h3 class="fw-bold">SERVICIOS UNIVERSITARIOS</h3>
+                        <p class="mb-4">Conoce nuestras servicios y espacios universitarios.</p>
+                        <div>
+                            <a href="#" class="btn btn-outline-white btn-sm">CONOCE MÁS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-
-  <!-- ===================== SECCIÓN TOUR VIRTUAL 360° ===================== -->
-  <section class="py-4 bg-light">
+</section>
+<!-- ===================== SECCIÓN TOUR VIRTUAL 360° ===================== -->
+<section class="py-4 bg-light">
     <div class="container py-2">
-      <div class="row align-items-center justify-content-center g-4">
-        <!-- Video del Tour Virtual a la izquierda -->
-        <div class="col-lg-7">
-          <div class="shadow-sm rounded-4 overflow-hidden bg-black">
-            <div class="ratio ratio-16x9">
-              <a href="https://tour-virtual.uteq.edu.ec/" target="_blank" rel="noopener noreferrer" class="text-decoration-none d-block">
-                <video autoplay muted loop playsinline poster="../img/tour-hero.png" preload="metadata" class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                  <source src="https://uteq.edu.ec/assets/videos/tour-virtual-360.mp4" type="video/mp4">
-                  Tu navegador no soporta la reproducción de video.
-                </video>
-              </a>
+        <div class="row align-items-center justify-content-center g-4">
+            <!-- Video del Tour Virtual a la izquierda -->
+            <div class="col-lg-7">
+                <div class="shadow-sm rounded-4 overflow-hidden bg-black">
+                    <div class="ratio ratio-16x9">
+                        <a
+                            href="https://tour-virtual.uteq.edu.ec/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none d-block"
+                        >
+                            <video
+                                autoplay
+                                muted
+                                loop
+                                playsinline
+                                poster="../img/tour-hero.png"
+                                preload="metadata"
+                                class="w-100 d-block"
+                                style="aspect-ratio: 16/9; object-fit: cover;"
+                            >
+                                <source src="https://uteq.edu.ec/assets/videos/tour-virtual-360.mp4" type="video/mp4">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
+            <!-- Texto descriptivo a la derecha -->
+            <div class="col-lg-4">
+                <span class="badge bg-success-subtle text-success fw-semibold px-3 py-2 rounded-pill mb-2">Explora el Campus</span>
+                <h2 class="fw-bold section-title mb-3">Tour Virtual
+                    <span class="text-uteq">360°</span>
+                </h2>
+                <p class="text-muted mb-4">Recorre cada rincón de nuestra universidad, laboratorios, aulas y áreas verdes desde cualquier dispositivo como si estuvieras allí.</p>
+                <a
+                    href="https://tour-virtual.uteq.edu.ec/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-success rounded-pill px-4 py-2 fw-semibold shadow-sm"
+                >
+                    <i class="bi bi-badge-3d-fill me-2"></i>
+                    Iniciar Recorrido
+                </a>
+            </div>
         </div>
-        <!-- Texto descriptivo a la derecha -->
-        <div class="col-lg-4">
-          <span class="badge bg-success-subtle text-success fw-semibold px-3 py-2 rounded-pill mb-2">Explora el Campus</span>
-          <h2 class="fw-bold section-title mb-3">Tour Virtual <span class="text-uteq">360°</span></h2>
-          <p class="text-muted mb-4">Recorre cada rincón de nuestra universidad, laboratorios, aulas y áreas verdes desde cualquier dispositivo como si estuvieras allí.</p>
-          <a href="https://tour-virtual.uteq.edu.ec/" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 py-2 fw-semibold shadow-sm">
-            <i class="bi bi-badge-3d-fill me-2"></i>Iniciar Recorrido
-          </a>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <!-- ===================== CONVENIOS Y ALIADOS ===================== -->
-  <section class="py-5">
+</section>
+<!-- ===================== CONVENIOS Y ALIADOS ===================== -->
+<section class="py-5">
     <div class="container">
-      <h3 class="text-center section-title mb-5">CONVENIOS Y <span class="text-uteq">ALIADOS</span></h3><span class="text-uteq">
-      <div id="alliesCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row align-items-center text-center g-4">
-              <div class="col-6 col-md-2"><div class="ally-logo">SENESCYT</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">CACES</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">CES</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">RED ALC</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">AME</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">IAF</div></div>
+        <h3 class="text-center section-title mb-5">CONVENIOS Y
+            <span class="text-uteq">ALIADOS</span>
+        </h3>
+        <span class="text-uteq">
+            <div id="alliesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center text-center g-4">
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">SENESCYT</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">CACES</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">CES</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">RED ALC</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">AME</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">IAF</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center text-center g-4">
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">THE</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">CEDIA</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">CONICYT</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">UNESCO</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">CLACSO</div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <div class="ally-logo">OEI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#alliesCarousel"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#alliesCarousel"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+                </button>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row align-items-center text-center g-4">
-              <div class="col-6 col-md-2"><div class="ally-logo">THE</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">CEDIA</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">CONICYT</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">UNESCO</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">CLACSO</div></div>
-              <div class="col-6 col-md-2"><div class="ally-logo">OEI</div></div>
+        </div>
+    </section>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer pt-5">
+        <div class="container">
+            <div class="row g-4 pb-4">
+                <div class="col-lg-4">
+                    <div class="mb-3">
+                        <img src="img/logo-uteq.webp" alt="UTEQ - Universidad Técnica Estatal de Quevedo" class="footer-logo">
+                    </div>
+                    <p class="small">Formamos profesionales competentes, éticos y comprometidos con el desarrollo de la sociedad.</p>
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="#" class="social-btn">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h6 class="mb-3">ENLACES RÁPIDOS</h6>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li>
+                            <a href="#">La UTEQ</a>
+                        </li>
+                        <li>
+                            <a href="#">Oferta Académica</a>
+                        </li>
+                        <li>
+                            <a href="#">Investigación</a>
+                        </li>
+                        <li>
+                            <a href="#">Vinculación</a>
+                        </li>
+                        <li>
+                            <a href="#">Servicios</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h6 class="mb-3">&nbsp;</h6>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li>
+                            <a href="#">Transparencia</a>
+                        </li>
+                        <li>
+                            <a href="#">Biblioteca</a>
+                        </li>
+                        <li>
+                            <a href="#">Aula Virtual</a>
+                        </li>
+                        <li>
+                            <a href="#">Correo Institucional</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">CONTACTO</h6>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li>
+                            <i class="bi bi-geo-alt me-2"></i>Av. Quito km 1.5 vía a Santo Domingo, Quevedo - Los Ríos - Ecuador
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone me-2"></i>(05) 2 780 388 / (05) 2 780 405
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope me-2"></i>info@uteq.edu.ec
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#alliesCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#alliesCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer pt-5">
-    <div class="container">
-      <div class="row g-4 pb-4">
-        <div class="col-lg-4">
-          <div class="mb-3">
-            <img src="img/logo-uteq.webp" alt="UTEQ - Universidad Técnica Estatal de Quevedo" class="footer-logo" />
-          </div>
-          <p class="small">Formamos profesionales competentes, éticos y comprometidos con el desarrollo de la sociedad.</p>
-          <div class="d-flex gap-2 mt-3">
-            <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="social-btn"><i class="bi bi-linkedin"></i></a>
-          </div>
+        <div class="footer-bottom py-3">
+            <div class="container d-flex flex-wrap justify-content-between gap-2">
+                <span>© 2026 Universidad Técnica Estatal de Quevedo - UTEQ. Todos los derechos reservados.</span>
+                <span class="d-flex gap-3">
+                    <a href="#">Mapa del sitio</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                </span>
+            </div>
         </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <h6 class="mb-3">ENLACES RÁPIDOS</h6>
-          <ul class="list-unstyled small d-grid gap-2">
-            <li><a href="#">La UTEQ</a></li>
-            <li><a href="#">Oferta Académica</a></li>
-            <li><a href="#">Investigación</a></li>
-            <li><a href="#">Vinculación</a></li>
-            <li><a href="#">Servicios</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <h6 class="mb-3">&nbsp;</h6>
-          <ul class="list-unstyled small d-grid gap-2">
-            <li><a href="#">Transparencia</a></li>
-            <li><a href="#">Biblioteca</a></li>
-            <li><a href="#">Aula Virtual</a></li>
-            <li><a href="#">Correo Institucional</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <h6 class="mb-3">CONTACTO</h6>
-          <ul class="list-unstyled small d-grid gap-2">
-            <li><i class="bi bi-geo-alt me-2"></i>Av. Quito km 1.5 vía a Santo Domingo, Quevedo - Los Ríos - Ecuador</li>
-            <li><i class="bi bi-telephone me-2"></i>(05) 2 780 388 / (05) 2 780 405</li>
-            <li><i class="bi bi-envelope me-2"></i>info@uteq.edu.ec</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom py-3">
-      <div class="container d-flex flex-wrap justify-content-between gap-2">
-        <span>© 2026 Universidad Técnica Estatal de Quevedo - UTEQ. Todos los derechos reservados.</span>
-        <span class="d-flex gap-3">
-          <a href="#">Mapa del sitio</a>
-          <a href="#">Política de privacidad</a>
-          <a href="#">Términos y condiciones</a>
-        </span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ===================== BOTÓN SUBIR ARRIBA ===================== -->
-  <button id="btnBackToTop" class="btn-back-to-top" aria-label="Volver arriba">
-    <i class="bi bi-chevron-up"></i>
-  </button>
-
-  <!-- Bootstrap JS bundle (incluye Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <!-- JS de Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
+    </footer>
+    <!-- ===================== BOTÓN SUBIR ARRIBA ===================== -->
+    <button id="btnBackToTop" class="btn-back-to-top" aria-label="Volver arriba">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+    <!-- Bootstrap JS bundle (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS de Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
     window.addEventListener('resize', function() {
       var carruselElement = document.getElementById('newsCarousel');
       if (carruselElement && window.bootstrap) {
@@ -921,8 +1209,8 @@
         }
       }
     });
-  </script>
-  <script>
+    </script>
+    <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Carrusel de Carreras
     const careersSwiper = new Swiper('.careersSwiper', {
@@ -974,10 +1262,8 @@
         },
     });
 });
-
-</script>
-
-<script>
+    </script>
+    <script>
   // Script para mostrar/ocultar el botón al hacer scroll
   const btnBackToTop = document.getElementById('btnBackToTop');
   
@@ -995,7 +1281,6 @@
       behavior: 'smooth'
     });
   });
-</script>
-
+    </script>
 </body>
 </html>

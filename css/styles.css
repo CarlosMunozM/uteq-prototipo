@@ -13,7 +13,9 @@
   --uteq-bg-soft: #f6f7f6;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -21,17 +23,40 @@ body {
   background-color: var(--uteq-bg);
 }
 
-h1, h2, h3, h4, h5, h6, .display-6, .fw-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-6,
+.fw-heading {
   font-family: 'Poppins', system-ui, sans-serif;
 }
 
-.text-uteq { color: var(--uteq-green) !important; }
-.bg-uteq { background-color: var(--uteq-green) !important; }
-.bg-uteq-dark { background-color: var(--uteq-green-dark) !important; }
-.bg-uteq-darker { background-color: var(--uteq-green-darker) !important; }
-.bg-soft { background-color: var(--uteq-bg-soft) !important; }
+.text-uteq {
+  color: var(--uteq-green) !important;
+}
 
-a { text-decoration: none; }
+.bg-uteq {
+  background-color: var(--uteq-green) !important;
+}
+
+.bg-uteq-dark {
+  background-color: var(--uteq-green-dark) !important;
+}
+
+.bg-uteq-darker {
+  background-color: var(--uteq-green-darker) !important;
+}
+
+.bg-soft {
+  background-color: var(--uteq-bg-soft) !important;
+}
+
+a {
+  text-decoration: none;
+}
 
 /* ---------------- Botones ---------------- */
 .btn-uteq {
@@ -43,11 +68,13 @@ a { text-decoration: none; }
   padding: .65rem 1.4rem;
   border-radius: 4px;
 }
+
 .btn-uteq:hover {
   background-color: var(--uteq-green-light);
   border-color: var(--uteq-green-light);
   color: #fff;
 }
+
 .btn-outline-white {
   border: 2px solid #fff;
   color: #fff;
@@ -55,7 +82,11 @@ a { text-decoration: none; }
   padding: .6rem 1.4rem;
   border-radius: 4px;
 }
-.btn-outline-white:hover { background: #fff; color: var(--uteq-green-dark); }
+
+.btn-outline-white:hover {
+  background: #fff;
+  color: var(--uteq-green-dark);
+}
 
 /* ---------------- Barra superior (Negra) ---------------- */
 .topbar {
@@ -63,19 +94,20 @@ a { text-decoration: none; }
   font-size: 0.75rem;
 }
 
-.topbar a { 
-  color: rgba(255, 255, 255, 0.85); 
-  text-decoration: none; 
+.topbar a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
 }
 
-.topbar a:hover { 
-  color: #fff; 
+.topbar a:hover {
+  color: #fff;
 }
 
 /* Ocultar barra de desplazamiento horizontal en la topbar para móviles */
 .topbar-scroll::-webkit-scrollbar {
   display: none;
 }
+
 .topbar-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -87,7 +119,8 @@ a { text-decoration: none; }
   padding: 0.15rem 0.4rem;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  gap: 0.3rem !important; /* Reducimos el espacio interno entre elementos */
+  gap: 0.3rem !important;
+  /* Reducimos el espacio interno entre elementos */
 }
 
 /* Botón de Idioma (ES) */
@@ -111,7 +144,8 @@ a { text-decoration: none; }
   padding: 0.1rem 0.45rem;
   border-radius: 12px;
   transition: all 0.2s ease;
-  white-space: nowrap; /* Evita que la palabra 'Buscar' se baje de línea */
+  white-space: nowrap;
+  /* Evita que la palabra 'Buscar' se baje de línea */
 }
 
 .btn-search-bar:hover {
@@ -126,7 +160,8 @@ a { text-decoration: none; }
 /* Ajuste del menú desplegable del idioma para que no se mueva de posición */
 .topbar .dropdown-menu {
   position: absolute !important;
-  inset: auto auto auto 0 !important; /* Se alinea justo debajo del botón ES */
+  inset: auto auto auto 0 !important;
+  /* Se alinea justo debajo del botón ES */
   transform: translate(0, 25px) !important;
   z-index: 9999 !important;
   background-color: #1a1a1a !important;
@@ -135,58 +170,74 @@ a { text-decoration: none; }
 }
 
 /* ---------------- Navbar (Verde institucional) ---------------- */
-.navbar-uteq { 
+.navbar-uteq {
   background: linear-gradient(90deg, var(--uteq-green-dark), var(--uteq-green)) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.15); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
 }
 
 /* Quitamos el fondo verde anterior del logo para que respire bien sobre el nuevo fondo */
 .brand-badge {
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
-  background: transparent; 
-  padding: 0; 
+  background: transparent;
+  padding: 0;
 }
-.brand-img { 
-  height: 38px; 
-  width: auto; 
-  display: block; 
+
+.brand-img {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
 /* Footer (sin cambios) */
-.footer-logo { height: 48px; width: auto; max-width: 100%; }
+.footer-logo {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+}
 
 /* Estilos de los enlaces del menú principal en fondo verde */
 .navbar-uteq .nav-link {
-  font-weight: 600; 
-  font-size: .82rem; 
+  font-weight: 600;
+  font-size: .82rem;
   letter-spacing: .4px;
-  color: #ffffff !important; /* Texto blanco para que resalte en el verde */
-  text-transform: uppercase; 
+  color: #ffffff !important;
+  /* Texto blanco para que resalte en el verde */
+  text-transform: uppercase;
   padding: .5rem .85rem !important;
 }
+
 .navbar-uteq .nav-link.active,
-.navbar-uteq .nav-link:hover { 
-  color: #ffffff !important; 
+.navbar-uteq .nav-link:hover {
+  color: #ffffff !important;
 }
-.navbar-uteq .nav-link.active { 
-  border-bottom: 3px solid #ffffff; /* O puedes usar var(--uteq-green-light) */
+
+.navbar-uteq .nav-link.active {
+  border-bottom: 3px solid #ffffff;
+  /* O puedes usar var(--uteq-green-light) */
 }
 
 /* 1. Reseteamos el contenedor para quitar el fondo blanco y borde */
 .navbar-uteq .navbar-toggler {
-  background-color: transparent !important; /* Fondo transparente */
-  border: none !important; /* Sin borde */
-  padding: 0.25rem !important; /* Menos padding */
-  margin-right: -0.5rem; /* Ajuste fino para que quede bien a la derecha */
-  box-shadow: none !important; /* Sin sombra */
+  background-color: transparent !important;
+  /* Fondo transparente */
+  border: none !important;
+  /* Sin borde */
+  padding: 0.25rem !important;
+  /* Menos padding */
+  margin-right: -0.5rem;
+  /* Ajuste fino para que quede bien a la derecha */
+  box-shadow: none !important;
+  /* Sin sombra */
   transition: all 0.2s ease-in-out;
 }
 
 /* 2. Icono de hamburguesa*/
 .navbar-uteq .navbar-toggler {
-  background-color: rgba(255, 255, 255, 0.1) !important; /* Un sutil fondo translúcido que ayuda a destacarlo */
-  border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Borde fino y elegante */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  /* Un sutil fondo translúcido que ayuda a destacarlo */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  /* Borde fino y elegante */
   padding: 0.4rem 0.55rem !important;
   border-radius: 6px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -209,26 +260,28 @@ a { text-decoration: none; }
 /* ---------------- Hero Mejorado ---------------- */
 .hero {
   position: relative;
-  min-height: 500px; /* Un poco más de altura para que respire mejor */
+  min-height: 500px;
+  /* Un poco más de altura para que respire mejor */
   color: #fff;
   /* Degradado más profundo a la izquierda para contraste óptimo, fundiéndose hacia la derecha */
   background: linear-gradient(90deg, rgba(10, 35, 18, 0.92) 0%, rgba(10, 35, 18, 0.65) 50%, rgba(10, 35, 18, 0.3) 100%),
-              url('https://www.uteq.edu.ec/assets/images/banners/img-uteq-banner-0000002.jpg') center/cover no-repeat;
+    url('https://www.uteq.edu.ec/assets/images/banners/img-uteq-banner-0000002.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 4rem 0;
 }
 
-.hero h1 { 
-  font-weight: 700; 
-  font-size: clamp(2.2rem, 4.5vw, 3.4rem); 
-  line-height: 1.15; 
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Sombra para destacar sobre la imagen */
+.hero h1 {
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  /* Sombra para destacar sobre la imagen */
 }
 
-.hero .lead { 
-  max-width: 480px; 
-  color: rgba(255, 255, 255, 0.95); 
+.hero .lead {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1.1rem;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
@@ -266,28 +319,65 @@ a { text-decoration: none; }
   width: 24px;
   border-radius: 5px;
 }
+
 /* ---------------- Accesos rápidos ---------------- */
 .quick-access {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.10);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .10);
   margin-top: -55px;
-  position: relative; z-index: 5;
+  position: relative;
+  z-index: 5;
 }
-.quick-item { color: #333; transition: transform .2s; }
-.quick-item:hover { transform: translateY(-4px); color: var(--uteq-green); }
+
+.quick-item {
+  color: #333;
+  transition: transform .2s;
+}
+
+.quick-item:hover {
+  transform: translateY(-4px);
+  color: var(--uteq-green);
+}
+
 .quick-item .qi-icon {
-  width: 46px; height: 46px; color: var(--uteq-green);
+  width: 46px;
+  height: 46px;
+  color: var(--uteq-green);
 }
-.quick-item span { font-size: .82rem; font-weight: 600; }
-.quick-divider { border-right: 1px solid #eee; }
+
+.quick-item span {
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.quick-divider {
+  border-right: 1px solid #eee;
+}
 
 /* ---------------- Cifras ---------------- */
-.stat-icon { color: var(--uteq-green); }
-.stat-number { font-size: 2rem; font-weight: 700; color: #222; }
-.stat-label { color: var(--uteq-gray); font-size: .9rem; }
-.stat-cell { border-right: 1px solid #eee; }
-.stat-cell:last-child { border-right: none; }
+.stat-icon {
+  color: var(--uteq-green);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.stat-label {
+  color: var(--uteq-gray);
+  font-size: .9rem;
+}
+
+.stat-cell {
+  border-right: 1px solid #eee;
+}
+
+.stat-cell:last-child {
+  border-right: none;
+}
 
 /* ---------------- Carreras Carrusel (Swiper) ---------------- */
 
@@ -299,22 +389,22 @@ a { text-decoration: none; }
 /* Posicionamiento absoluto anclado al .container de la sección (Escritorio) */
 .career-prev,
 .career-next {
-    background-color: var(--uteq-green, #198754) !important;
-    color: #fff !important;
-    width: 45px !important;
-    height: 45px !important;
-    border-radius: 50% !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: absolute !important;
-    top: 65% !important;
-    transform: translateY(-50%);
-    z-index: 30;
+  background-color: var(--uteq-green, #198754) !important;
+  color: #fff !important;
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: absolute !important;
+  top: 65% !important;
+  transform: translateY(-50%);
+  z-index: 30;
 }
 
 .career-prev:after,
 .career-next:after {
-    font-size: 1rem !important;
-    font-weight: bold;
+  font-size: 1rem !important;
+  font-weight: bold;
 }
 
 /* Espacio lateral en escritorio para las flechas */
@@ -324,16 +414,16 @@ a { text-decoration: none; }
 }
 
 .career-prev {
-    left: -10px !important;
+  left: -10px !important;
 }
 
 .career-next {
-    right: -10px !important;
+  right: -10px !important;
 }
 
 /* --- RESPONSIVE: MÓVILES (Ancho completo y ocultar flechas) --- */
 @media (max-width: 768px) {
-  
+
   /* Ocultar flechas de forma contundente */
   .career-prev,
   .career-next {
@@ -351,86 +441,119 @@ a { text-decoration: none; }
 
 /* --- Paginación de Puntos Inferiores --- */
 .career-pagination {
-    position: relative !important;
-    margin-top: 1.5rem !important;
+  position: relative !important;
+  margin-top: 1.5rem !important;
 }
 
 .career-pagination .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: #c5d3cb;
-    opacity: 1;
-    transition: all 0.3s ease;
-    margin: 0 4px !important;
+  width: 10px;
+  height: 10px;
+  background: #c5d3cb;
+  opacity: 1;
+  transition: all 0.3s ease;
+  margin: 0 4px !important;
 }
 
 .career-pagination .swiper-pagination-bullet-active {
-    background: var(--uteq-green, #198754);
-    width: 24px;
-    border-radius: 5px;
+  background: var(--uteq-green, #198754);
+  width: 24px;
+  border-radius: 5px;
 }
 
 
 /* ---------------- Diseño Moderno para Tarjetas de Carreras ---------------- */
 .career-card-modern {
-    height: 300px !important;
-    border: none;
-    background: #000;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px !important;
+  border: none;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .career-card-modern img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px !important;
 }
 
 /* Degradado inferior para resaltar el texto */
 .career-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(18, 75, 43, 0.88) 85%);
-    z-index: 1;
-    transition: background 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(18, 75, 43, 0.88) 85%);
+  z-index: 1;
+  transition: background 0.3s ease;
 }
 
 .career-content {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 /* Efectos Hover dinámicos */
 .career-card-modern:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2) !important;
 }
 
 .career-card-modern:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .career-card-modern:hover .career-overlay {
-  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(18, 75, 43, 0.96) 85%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(18, 75, 43, 0.96) 85%);
 }
 
 /* ---------------- Noticias ---------------- */
 .news-card {
-  border: 1px solid #eee; border-radius: 10px; overflow: hidden; background: #fff;
-  height: 100%; transition: box-shadow .25s, transform .25s;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  height: 100%;
+  transition: box-shadow .25s, transform .25s;
 }
-.news-card:hover { box-shadow: 0 14px 34px rgba(0,0,0,.12); transform: translateY(-4px); }
-.news-card img { height: 180px; width: 100%; object-fit: cover; transition: transform .4s; }
-.news-card:hover img { transform: scale(1.05); }
-.news-tag { color: var(--uteq-green); font-weight: 700; font-size: .78rem; text-transform: uppercase; }
-.news-date { color: var(--uteq-gray); font-size: .78rem; }
-.news-card h6 { font-size: 1.1rem; font-weight: 700; line-height: 1.35; margin-bottom: .8rem; }
+
+.news-card:hover {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+  transform: translateY(-4px);
+}
+
+.news-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.news-card:hover img {
+  transform: scale(1.05);
+}
+
+.news-tag {
+  color: var(--uteq-green);
+  font-weight: 700;
+  font-size: .78rem;
+  text-transform: uppercase;
+}
+
+.news-date {
+  color: var(--uteq-gray);
+  font-size: .78rem;
+}
+
+.news-card h6 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: .8rem;
+}
 
 .card-title-clamp {
   display: -webkit-box !important;
@@ -445,16 +568,20 @@ a { text-decoration: none; }
 /* Contenedor del carrusel con padding seguro para que las flechas no desborden */
 .newsSwiper {
   position: relative;
-  padding: 0 40px; /* Deja espacio interno para las flechas en desktop sin romper márgenes */
+  padding: 0 40px;
+  /* Deja espacio interno para las flechas en desktop sin romper márgenes */
   margin: 0 auto !important;
 }
 
 /* Estilos compartidos para las flechas de noticias */
-.news-prev, .news-next {
+.news-prev,
+.news-next {
   background-color: var(--uteq-green, #198754) !important;
   color: #ffffff !important;
-  width: 48px !important; /* <--- Tamaño ampliado a 48px igual que los superiores */
-  height: 48px !important; /* <--- Tamaño ampliado a 48px igual que los superiores */
+  width: 48px !important;
+  /* <--- Tamaño ampliado a 48px igual que los superiores */
+  height: 48px !important;
+  /* <--- Tamaño ampliado a 48px igual que los superiores */
   border-radius: 50% !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   position: absolute;
@@ -466,12 +593,15 @@ a { text-decoration: none; }
   justify-content: center;
 }
 
-.news-prev:hover, .news-next:hover {
+.news-prev:hover,
+.news-next:hover {
   opacity: 0.9;
 }
 
-.news-prev::after, .news-next::after {
-  font-size: 1.2rem !important; /* <--- Icono interior ajustado proporcionalmente */
+.news-prev::after,
+.news-next::after {
+  font-size: 1.2rem !important;
+  /* <--- Icono interior ajustado proporcionalmente */
   font-weight: bold !important;
   color: #ffffff !important;
 }
@@ -486,8 +616,10 @@ a { text-decoration: none; }
 
 /* ---------------- Responsive para Móviles ---------------- */
 @media (max-width: 768px) {
+
   /* Ocultar flechas por completo en móviles */
-  .news-prev, .news-next {
+  .news-prev,
+  .news-next {
     display: none !important;
   }
 
@@ -515,77 +647,186 @@ a { text-decoration: none; }
 }
 
 /* ---------------- Agenda ---------------- */
-.calendar table { width: 100%; text-align: center; font-size: .8rem; }
-.calendar th { color: var(--uteq-gray); font-weight: 600; padding: .35rem 0; }
-.calendar td { padding: .35rem 0; color: #444; }
+.calendar table {
+  width: 100%;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.calendar th {
+  color: var(--uteq-gray);
+  font-weight: 600;
+  padding: .35rem 0;
+}
+
+.calendar td {
+  padding: .35rem 0;
+  color: #444;
+}
+
 .calendar .today {
-  background: var(--uteq-green); color: #fff; border-radius: 50%;
-  display: inline-block; width: 26px; height: 26px; line-height: 26px;
+  background: var(--uteq-green);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
 }
 
 /* ---------------- Bloque de Fecha Estilo Calendario ---------------- */
 .agenda-day {
   background-color: var(--uteq-green, #28a745);
   color: #fff;
-  width: 60px;           /* Ancho fijo de la cajita */
-  height: 60px;          /* Alto fijo para hacerla simétrica */
-  border-radius: 12px;   /* Esquinas redondeadas */
+  width: 60px;
+  /* Ancho fijo de la cajita */
+  height: 60px;
+  /* Alto fijo para hacerla simétrica */
+  border-radius: 12px;
+  /* Esquinas redondeadas */
   display: flex;
-  flex-direction: column;/* Apila el número y el mes en columna */
-  justify-content: center;/* Centra verticalmente */
-  align-items: center;   /* Centra horizontalmente */
+  flex-direction: column;
+  /* Apila el número y el mes en columna */
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
   text-align: center;
-  flex-shrink: 0;        /* Evita que la cajita se deforme */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  /* Evita que la cajita se deforme */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para el Número del Día */
 .agenda-day .d {
-  font-size: 1.25rem;    /* Número grande */
+  font-size: 1.25rem;
+  /* Número grande */
   font-weight: 700;
-  line-height: 1;        /* Reduce espacio superior/inferior por defecto */
+  line-height: 1;
+  /* Reduce espacio superior/inferior por defecto */
 }
 
 /* Estilo para el Mes */
 .agenda-day .m {
-  font-size: 0.7rem;     /* Mes pequeño abajo */
+  font-size: 0.7rem;
+  /* Mes pequeño abajo */
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.5px;
-  margin-top: 2px;       /* Ligera separación del número */
+  margin-top: 2px;
+  /* Ligera separación del número */
   opacity: 0.9;
 }
 
 /* ---------------- Investigación / Vida ---------------- */
-.split-panel { position: relative; min-height: 240px; color: #fff; overflow: hidden; border-radius: 6px; }
-.split-panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-.split-panel .overlay { position: absolute; inset: 0; background: rgba(14,48,24,.72); z-index: 1; }
-.split-panel .content { position: relative; z-index: 2; padding: 2rem; }
-.mini-stat .n { font-size: 1.5rem; font-weight: 700; }
-.mini-stat .l { font-size: .78rem; opacity: .85; }
+.split-panel {
+  position: relative;
+  min-height: 240px;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.split-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.split-panel .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 48, 24, .72);
+  z-index: 1;
+}
+
+.split-panel .content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.mini-stat .n {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mini-stat .l {
+  font-size: .78rem;
+  opacity: .85;
+}
 
 /* ---------------- Aliados ---------------- */
 .ally-logo {
-  height: 60px; display: grid; place-items: center;
-  filter: grayscale(1); opacity: .7; transition: .25s; font-weight: 700; color: #444;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  filter: grayscale(1);
+  opacity: .7;
+  transition: .25s;
+  font-weight: 700;
+  color: #444;
 }
-.ally-logo:hover { filter: grayscale(0); opacity: 1; }
+
+.ally-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
 
 /* ---------------- Footer ---------------- */
-.footer { background: var(--uteq-green-darker); color: rgba(255,255,255,.8); }
-.footer a { color: rgba(255,255,255,.8); }
-.footer a:hover { color: #fff; }
-.footer h6 { color: #fff; font-weight: 700; letter-spacing: .5px; }
-.social-btn {
-  width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.12);
-  display: grid; place-items: center; color: #fff;
+.footer {
+  background: var(--uteq-green-darker);
+  color: rgba(255, 255, 255, .8);
 }
-.social-btn:hover { background: var(--uteq-green); color: #fff; }
-.footer-bottom { background: rgba(0,0,0,.25); font-size: .82rem; }
+
+.footer a {
+  color: rgba(255, 255, 255, .8);
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer h6 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.social-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.social-btn:hover {
+  background: var(--uteq-green);
+  color: #fff;
+}
+
+.footer-bottom {
+  background: rgba(0, 0, 0, .25);
+  font-size: .82rem;
+}
 
 /* ---------------- Carousel controls ---------------- */
-.section-title { font-weight: 700; letter-spacing: .5px; }
-.link-more { color: var(--uteq-green); font-weight: 600; font-size: .85rem; }
+.section-title {
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.link-more {
+  color: var(--uteq-green);
+  font-weight: 600;
+  font-size: .85rem;
+}
 
 
 /* ---------------- Botón Volver Arriba (Moderno) ---------------- */
@@ -595,12 +836,15 @@ a { text-decoration: none; }
   right: 30px;
   width: 48px;
   height: 48px;
-  background: rgba(28, 122, 53, 0.9); /* Color institucional con ligera transparencia */
-  backdrop-filter: blur(8px); /* Efecto cristal esmerilado moderno */
+  background: rgba(28, 122, 53, 0.9);
+  /* Color institucional con ligera transparencia */
+  backdrop-filter: blur(8px);
+  /* Efecto cristal esmerilado moderno */
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 14px; /* Estilo cuadrado redondeado moderno (soft-square) */
+  border-radius: 14px;
+  /* Estilo cuadrado redondeado moderno (soft-square) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -627,7 +871,8 @@ a { text-decoration: none; }
 }
 
 .btn-back-to-top:hover i {
-  transform: translateY(-2px); /* Pequeño salto de la flecha hacia arriba al hacer hover */
+  transform: translateY(-2px);
+  /* Pequeño salto de la flecha hacia arriba al hacer hover */
 }
 
 .btn-back-to-top.show {
