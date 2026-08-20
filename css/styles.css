@@ -196,25 +196,137 @@ a {
   max-width: 100%;
 }
 
+/* Posicionamiento y ocultamiento por defecto de los submenús */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: 0;
+  display: none;
+}
+
+/* Muestra el submenú automáticamente al pasar el cursor sobre el elemento padre */
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+
+/* Estilos por defecto para escritorio (Hover lateral) */
+@media (min-width: 992px) {
+  .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    display: none;
+  }
+
+  .dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+  }
+}
+
+/* Estilos para dispositivos móviles / tablets (Despliegue vertical) */
+@media (max-width: 991.98px) {
+  .dropdown-submenu>.dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    padding-left: 15px;
+    /* Indentación visual para los hijos en móvil */
+    display: block !important;
+  }
+
+  .dropdown-submenu>.dropdown-menu.show {
+    display: block;
+  }
+}
+
+.dropdown-menu {
+  border-radius: 8px !important;
+  border: 1px solid rgba(28, 122, 53, 0.15) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.5rem 0 !important;
+  background-color: #ffffff !important;
+}
+
+.dropdown-item {
+  font-size: 0.85rem;
+  padding: 0.6rem 1.25rem;
+  color: #2b2f2c;
+  transition: all 0.2s ease-in-out;
+  /* Línea sutil separadora entre elementos */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Efecto hover elegante con un verde muy suave institucional */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f0f7f2 !important;
+  color: var(--uteq-green) !important;
+  padding-left: 1.5rem;
+  /* Pequeño desplazamiento elegante */
+}
+
+.dropdown-submenu>a::after {
+  float: right;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
 /* Estilos de los enlaces del menú principal en fondo verde */
 .navbar-uteq .nav-link {
   font-weight: 600;
   font-size: .82rem;
   letter-spacing: .4px;
   color: #ffffff !important;
-  /* Texto blanco para que resalte en el verde */
   text-transform: uppercase;
   padding: .5rem .85rem !important;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Quita la línea al último elemento de la lista para que se vea limpio */
+.dropdown-menu li:last-child .dropdown-item {
+  border-bottom: none;
 }
 
 .navbar-uteq .nav-link.active,
 .navbar-uteq .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Crea un fondo translúcido muy moderno */
   color: #ffffff !important;
 }
 
 .navbar-uteq .nav-link.active {
   border-bottom: 3px solid #ffffff;
   /* O puedes usar var(--uteq-green-light) */
+}
+
+.dropdown-submenu>.dropdown-menu {
+  display: none !important;
+}
+
+/* Solo se muestra si tiene la clase .show (en móvil) */
+.dropdown-submenu>.dropdown-menu.show {
+  display: block !important;
+}
+
+/* En escritorio, se muestra con el hover */
+@media (min-width: 992px) {
+  .dropdown-submenu:hover>.dropdown-menu {
+    display: block !important;
+  }
 }
 
 /* 1. Reseteamos el contenedor para quitar el fondo blanco y borde */
