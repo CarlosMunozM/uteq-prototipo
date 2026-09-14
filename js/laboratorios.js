@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll("[data-bs-target]");
     const panes = document.querySelectorAll("#labTabsContent > .tab-pane");
 
-    // Scroll horizontal de tabs con la rueda
     if (tabsScroll) {
         tabsScroll.addEventListener("wheel", function (event) {
             if (event.deltaY === 0) return;
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, { passive: false });
     }
 
-    // Arrastrar tabs horizontalmente
     if (tabsScroll) {
         let isDragging = false;
         let startX = 0;
@@ -36,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         tabsScroll.addEventListener("mousemove", function (event) {
             if (!isDragging) return;
             event.preventDefault();
+
             const currentX = event.pageX;
             const distance = currentX - startX;
 
@@ -52,11 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
     function activateTab(tab, scroll = true) {
         const target = tab.dataset.bsTarget;
         const pane = document.querySelector(target);
+
         if (!pane) return;
 
         tabs.forEach(item => {
             item.classList.toggle("active", item === tab);
-            item.setAttribute("aria-selected", item === tab ? "true" : "false");
+            item.setAttribute(
+                "aria-selected",
+                item === tab ? "true" : "false"
+            );
         });
 
         panes.forEach(item => {
@@ -68,7 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
             history.replaceState(null, "", window.location.pathname);
         } else {
             history.replaceState(null, "", target);
-            if (scroll) focusTab(tab);
+
+            if (scroll) {
+                focusTab(tab);
+            }
         }
     }
 
@@ -92,36 +98,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Tabs
     tabs.forEach(tab => {
         tab.addEventListener("click", function () {
             activateTab(this);
         });
     });
 
-    // Tarjetas
     cards.forEach(card => {
         card.addEventListener("click", function () {
             const labId = this.dataset.lab;
-            const tab = document.querySelector(`[data-bs-target="#${labId}"]`);
+            const tab = document.querySelector(
+                `[data-bs-target="#${labId}"]`
+            );
+
             if (!tab) return;
 
             activateTab(tab);
 
             setTimeout(() => {
-                tabsSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                if (tabsSection) {
+                    tabsSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
             }, 100);
         });
     });
 
-    // Hash de la URL
     const hash = window.location.hash.replace("#", "");
 
     if (hash) {
-        const targetTab = document.querySelector(`[data-bs-target="#${hash}"]`);
+        const targetTab = document.querySelector(
+            `[data-bs-target="#${hash}"]`
+        );
 
         if (targetTab) {
             activateTab(targetTab, false);
@@ -129,10 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
                 focusTab(targetTab);
 
-                tabsSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                if (tabsSection) {
+                    tabsSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
             }, 100);
         }
     }
@@ -152,30 +164,77 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 5000);
     });
 
-    // Mostrar / ocultar equipamiento adicional
-    document.querySelectorAll("[data-equipment-toggle]").forEach(function (button) {
+    // Equipamiento: mostrar solo los primeros 6
+    document.querySelectorAll(".lab-detail-modern").forEach(function (section) {
+        const grid = section.querySelector(".lab-equipment-grid");
+
+        if (!grid) return;
+
+        const equipment = Array.from(
+            grid.querySelectorAll(".lab-equipment-card")
+        );
+
+        if (equipment.length <= 6) return;
+
+        let button = section.querySelector("[data-equipment-toggle]");
+
+        if (!button) {
+            button = document.createElement("button");
+            button.type = "button";
+            button.className = "lab-equipment-toggle";
+            button.setAttribute("data-equipment-toggle", "true");
+
+            grid.insertAdjacentElement("afterend", button);
+        }
+
+        button.innerHTML =
+            'Ver todo el equipamiento <i class="bi bi-arrow-right"></i>';
+
+        equipment.forEach(function (item, index) {
+            if (index >= 6) {
+                item.classList.add("equipment-hidden");
+            }
+        });
+
         button.addEventListener("click", function () {
-            const section = button.closest(".lab-detail-modern");
-            if (!section) return;
+            const expanded =
+                grid.classList.toggle("equipment-expanded");
 
-            const more = section.querySelector("[data-equipment-more]");
-            if (!more) return;
+            equipment.forEach(function (item, index) {
+                if (index >= 6) {
+                    item.classList.toggle(
+                        "equipment-hidden",
+                        !expanded
+                    );
+                }
+            });
 
-            const isOpen = more.classList.toggle("open");
-
-            if (isOpen) {
-                button.innerHTML = 'Ocultar equipamiento <i class="bi bi-arrow-up"></i>';
+            if (expanded) {
+                button.innerHTML =
+                    'Ocultar equipamiento <i class="bi bi-arrow-up"></i>';
             } else {
-                button.innerHTML = 'Ver todo el equipamiento <i class="bi bi-arrow-right"></i>';
+                button.innerHTML =
+                    'Ver todo el equipamiento <i class="bi bi-arrow-right"></i>';
             }
         });
     });
 
-    /* =========================================================
-       GALERÍA DEL LABORATORIO
-       Carrusel automático + visor
-       ========================================================= */
+    // Carrusel de imagen principal del laboratorio
+    document.querySelectorAll(".lab-detail-cover").forEach(function (cover) {
+        const slides = cover.querySelectorAll(".summary-slide");
 
+        if (slides.length < 2) return;
+
+        let current = 0;
+
+        setInterval(function () {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 10000);
+    });
+
+    // Galería del laboratorio
     const galleryCarousel = document.querySelector(".lab-gallery-carousel");
     const galleryTrack = document.querySelector(".lab-gallery-track");
     const galleryItems = document.querySelectorAll(".lab-gallery-item");
@@ -188,15 +247,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function getVisibleItems() {
             const width = window.innerWidth;
+
             if (width <= 575) return 2;
             if (width <= 767) return 3;
             if (width <= 1200) return 4;
+
             return 5;
         }
 
         function updateGallery() {
             const visibleItems = getVisibleItems();
-            const maxPosition = Math.max(0, galleryItems.length - visibleItems);
+            const maxPosition = Math.max(
+                0,
+                galleryItems.length - visibleItems
+            );
 
             if (galleryPosition > maxPosition) {
                 galleryPosition = 0;
@@ -209,22 +273,29 @@ document.addEventListener("DOMContentLoaded", function () {
             const item = galleryItems[0];
             const itemWidth = item.offsetWidth;
             const gap = window.innerWidth <= 767 ? 14 : 18;
-            const translate = galleryPosition * (itemWidth + gap);
+            const translate =
+                galleryPosition * (itemWidth + gap);
 
-            galleryTrack.style.transform = "translateX(-" + translate + "px)";
+            galleryTrack.style.transform =
+                "translateX(-" + translate + "px)";
 
             if (galleryPrev) {
-                galleryPrev.disabled = galleryPosition === 0;
+                galleryPrev.disabled =
+                    galleryPosition === 0;
             }
 
             if (galleryNext) {
-                galleryNext.disabled = galleryPosition >= maxPosition;
+                galleryNext.disabled =
+                    galleryPosition >= maxPosition;
             }
         }
 
         function nextGallery() {
             const visibleItems = getVisibleItems();
-            const maxPosition = Math.max(0, galleryItems.length - visibleItems);
+            const maxPosition = Math.max(
+                0,
+                galleryItems.length - visibleItems
+            );
 
             galleryPosition++;
 
@@ -245,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 3000);
         }
 
-        // Botón anterior
         if (galleryPrev) {
             galleryPrev.addEventListener("click", function () {
                 galleryPosition--;
@@ -254,7 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // Botón siguiente
         if (galleryNext) {
             galleryNext.addEventListener("click", function () {
                 nextGallery();
@@ -262,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // Reiniciar posición al cambiar tamaño
         window.addEventListener("resize", function () {
             galleryPosition = 0;
             updateGallery();
@@ -272,23 +340,27 @@ document.addEventListener("DOMContentLoaded", function () {
         updateGallery();
         startGallery();
 
-        /* =====================================================
-           VISOR / LIGHTBOX
-           ===================================================== */
-
+        // Lightbox
         const lightbox = document.getElementById("labLightbox");
-        const lightboxImage = document.querySelector(".lab-lightbox-image");
-        const lightboxClose = document.querySelector(".lab-lightbox-close");
-        const lightboxPrev = document.querySelector(".lab-lightbox-prev");
-        const lightboxNext = document.querySelector(".lab-lightbox-next");
-        const lightboxCurrent = document.getElementById("labLightboxCurrent");
-        const lightboxTotal = document.getElementById("labLightboxTotal");
+        const lightboxImage =
+            document.querySelector(".lab-lightbox-image");
+        const lightboxClose =
+            document.querySelector(".lab-lightbox-close");
+        const lightboxPrev =
+            document.querySelector(".lab-lightbox-prev");
+        const lightboxNext =
+            document.querySelector(".lab-lightbox-next");
+        const lightboxCurrent =
+            document.getElementById("labLightboxCurrent");
+        const lightboxTotal =
+            document.getElementById("labLightboxTotal");
 
         if (lightbox && lightboxImage) {
             let currentImage = 0;
 
             if (lightboxTotal) {
-                lightboxTotal.textContent = galleryItems.length;
+                lightboxTotal.textContent =
+                    galleryItems.length;
             }
 
             function showLightboxImage(index) {
@@ -303,7 +375,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentImage = index;
 
                 const item = galleryItems[currentImage];
-                const imageUrl = item.getAttribute("data-gallery-image");
+                const imageUrl =
+                    item.getAttribute("data-gallery-image");
                 const thumbnail = item.querySelector("img");
 
                 if (imageUrl) {
@@ -313,11 +386,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 if (thumbnail) {
-                    lightboxImage.alt = thumbnail.alt || "Imagen del laboratorio";
+                    lightboxImage.alt =
+                        thumbnail.alt ||
+                        "Imagen del laboratorio";
                 }
 
                 if (lightboxCurrent) {
-                    lightboxCurrent.textContent = currentImage + 1;
+                    lightboxCurrent.textContent =
+                        currentImage + 1;
                 }
             }
 
@@ -332,14 +408,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.style.overflow = "";
             }
 
-            // Abrir visor al hacer clic
             galleryItems.forEach(function (item, index) {
                 item.addEventListener("click", function () {
                     openLightbox(index);
                 });
             });
 
-            // Imagen anterior
             if (lightboxPrev) {
                 lightboxPrev.addEventListener("click", function (event) {
                     event.stopPropagation();
@@ -347,7 +421,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Imagen siguiente
             if (lightboxNext) {
                 lightboxNext.addEventListener("click", function (event) {
                     event.stopPropagation();
@@ -355,7 +428,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Cerrar visor
             if (lightboxClose) {
                 lightboxClose.addEventListener("click", function (event) {
                     event.stopPropagation();
@@ -363,14 +435,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Cerrar haciendo clic fuera de la imagen
             lightbox.addEventListener("click", function (event) {
                 if (event.target === lightbox) {
                     closeLightbox();
                 }
             });
 
-            // Controles de teclado
             document.addEventListener("keydown", function (event) {
                 if (!lightbox.classList.contains("open")) {
                     return;
