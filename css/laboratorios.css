@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'open-sans-light';
+    src: url('../fonts/OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --green: #006b45;
     --green-dark: #004e35;
@@ -16,6 +24,8 @@ body {
     background: #fff;
     color: var(--text);
     font-family: 'open-sans-light', sans-serif;
+   
+    color: #2D2D2D;
 }
 
 a {
@@ -1071,8 +1081,8 @@ button {
 
     color: #101c20;
 
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .lab-section-link {
@@ -1217,8 +1227,8 @@ button {
 
     color: #101c20;
 
-    font-size: 24px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .lab-services-list {
