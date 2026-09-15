@@ -275,7 +275,7 @@ button {
     background: #fff;
     color: #3d4843;
 
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
 
     white-space: nowrap;
@@ -448,7 +448,7 @@ button {
 
     color: #59645f;
 
-    font-size: 10.5px;
+    font-size: 13px;
     line-height: 1.7;
 }
 
@@ -854,15 +854,6 @@ button {
    IMAGEN PRINCIPAL DEL LABORATORIO
    ========================================================= */
 
-.lab-detail-cover {
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-    background: #e8eeeb;
-}
-
 .lab-detail-cover::after {
     content: "";
 
@@ -888,6 +879,15 @@ button {
     border-radius: 16px;
     overflow: hidden;
     background: #e7eeeb;
+}
+
+@media (min-width: 768px) {
+    .lab-detail-cover {
+        width: 90%;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .lab-detail-cover .summary-slide {
@@ -1408,7 +1408,7 @@ button {
     }
 
     .lab-gallery-item {
-        flex-basis: 210px;
+        flex: 0 0 210px;
         width: 210px;
         height: auto;
         aspect-ratio: 6000 / 3368;
@@ -1424,7 +1424,7 @@ button {
 
     .lab-gallery-track {
         display: flex;
-        gap: 14px;
+        gap: 12px;
         width: max-content;
     }
 
@@ -1443,9 +1443,6 @@ button {
         object-fit: cover;
     }
 
-    .lab-gallery-track {
-        gap: 20px !important;
-    }
 }
 
 /* =========================================================
@@ -1866,7 +1863,7 @@ button {
 
     .lab-section-heading h3,
     .lab-services-content h3 {
-        font-size: 21px;
+        font-size: 17px;
     }
 
 
@@ -2006,19 +2003,69 @@ button {
 
     /* Galería */
 
-    .lab-gallery-controls {
-        align-self: flex-end;
+    .lab-detail-section:has(.lab-gallery-track) .lab-section-heading {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
     }
 
-    .lab-gallery-item {
-        flex-basis: 100%;
-        width: 100%;
+    .lab-detail-section:has(.lab-gallery-track) .lab-section-heading h3 {
+        margin: 0;
+        flex: 1 1 auto;
+    }
 
-        height: 190px;
+    .lab-detail-section:has(.lab-gallery-track) .lab-gallery-controls {
+        align-self: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
     }
 
     .lab-gallery-track {
-        gap: 0;
+        gap: 12px;
+    }
+
+    .lab-gallery-item {
+        flex: 0 0 180px;
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
+        height: 101px;
+        aspect-ratio: 6000 / 3368;
+    }
+
+    .lab-gallery-item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .lab-gallery-prev,
+    .lab-gallery-next {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d6e2dc;
+        border-radius: 50%;
+        background: #fff;
+        color: var(--green);
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .lab-gallery-prev i,
+    .lab-gallery-next i {
+        display: block;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1;
     }
 
 
@@ -2297,7 +2344,7 @@ button {
     background: transparent;
     color: var(--green);
     font-family: inherit;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 800;
     line-height: 1.4;
     cursor: pointer;
@@ -2307,119 +2354,3 @@ button {
 .lab-equipment-toggle i { transition: transform .2s ease; }
 .lab-equipment-toggle:hover i { transform: translateX(4px); }
 .lab-equipment-more { display: none !important; }
-
-/* =========================================================
-   CORRECCIONES GALERIA - MOVIL
-   ========================================================= */
-@media (max-width: 575px) {
-    .lab-detail-section .lab-section-heading {
-        align-items: center;
-    }
-
-    .lab-detail-section:has(.lab-gallery-track) .lab-section-heading {
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 10px !important;
-    }
-
-    .lab-detail-section:has(.lab-gallery-track) .lab-section-heading h3 {
-        margin: 0 !important;
-        flex: 1 1 auto;
-    }
-
-    .lab-detail-section:has(.lab-gallery-track) .lab-gallery-controls {
-        align-self: center !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        gap: 8px !important;
-        flex-shrink: 0;
-    }
-
-    .lab-gallery-track {
-        gap: 12px !important;
-    }
-
-    .lab-gallery-item {
-        flex: 0 0 180px !important;
-        width: 180px !important;
-        min-width: 180px !important;
-        max-width: 180px !important;
-        height: 101px !important;
-        aspect-ratio: 6000 / 3368 !important;
-    }
-
-    .lab-gallery-item img {
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
-        object-position: center !important;
-    }
-
-    .lab-gallery-prev,
-    .lab-gallery-next {
-        width: 34px !important;
-        height: 34px !important;
-        min-width: 34px !important;
-        min-height: 34px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        border: 1px solid #d6e2dc !important;
-        border-radius: 50% !important;
-        background: #fff !important;
-        color: var(--green) !important;
-        font-size: 14px !important;
-        line-height: 1 !important;
-    }
-
-    .lab-gallery-prev i,
-    .lab-gallery-next i {
-        display: block !important;
-        margin: 0 !important;
-        font-size: 14px !important;
-        line-height: 1 !important;
-    }
-}
-
-/* Galería en teléfonos en posición horizontal */
-@media (min-width: 576px) and (max-width: 900px) and (orientation: landscape) {
-    .lab-gallery-track {
-        gap: 12px !important;
-    }
-
-    .lab-gallery-item {
-        flex: 0 0 230px !important;
-        width: 230px !important;
-        min-width: 230px !important;
-        max-width: 230px !important;
-        height: auto !important;
-        aspect-ratio: 6000 / 3368 !important;
-    }
-
-    .lab-gallery-item img {
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-        object-fit: cover !important;
-        object-position: center !important;
-    }
-
-    .lab-section-heading {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-    }
-
-    .lab-gallery-controls {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 8px !important;
-    }
-}
