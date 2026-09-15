@@ -2376,6 +2376,40 @@ button {
     }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    .lab-gallery-track { gap: 12px !important; }
+/* Galería en teléfonos en posición horizontal */
+@media (min-width: 576px) and (max-width: 900px) and (orientation: landscape) {
+    .lab-gallery-track {
+        gap: 12px !important;
+    }
+
+    .lab-gallery-item {
+        flex: 0 0 230px !important;
+        width: 230px !important;
+        min-width: 230px !important;
+        max-width: 230px !important;
+        height: auto !important;
+        aspect-ratio: 6000 / 3368 !important;
+    }
+
+    .lab-gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
+
+    .lab-section-heading {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .lab-gallery-controls {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
 }
